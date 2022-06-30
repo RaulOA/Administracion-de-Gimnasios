@@ -85,19 +85,26 @@ public class Loggin extends javax.swing.JFrame {
 
     private void btnRecepcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecepcionActionPerformed
         String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Recepcion");
-        if (passResepcion.equals("")) {
-            
-        }
-        
-        Recepcion ventana = new Recepcion();
-        ventana.setVisible(true);
-        this.dispose();
+        if (passResepcion.equals("123")) {
+            JOptionPane.showMessageDialog(rootPane, "Contraseña Correcta");
+            Recepcion ventana = new Recepcion();
+            ventana.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
+        }        
     }//GEN-LAST:event_btnRecepcionActionPerformed
 
     private void btnTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainersActionPerformed
-        Trainers ventana = new Trainers();
-        ventana.setVisible(true);
-        this.dispose();
+        String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Entrenador");
+        if (passResepcion.equals("456")) {
+            JOptionPane.showMessageDialog(rootPane, "Contraseña Correcta");
+            Trainers ventana = new Trainers();
+            ventana.setVisible(true);
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
+        }        
     }//GEN-LAST:event_btnTrainersActionPerformed
 
     /**
