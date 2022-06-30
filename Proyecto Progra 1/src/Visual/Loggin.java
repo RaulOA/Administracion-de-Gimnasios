@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Visual;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Tacho
- */
 public class Loggin extends javax.swing.JFrame {
 
     /**
@@ -87,7 +80,7 @@ public class Loggin extends javax.swing.JFrame {
         String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Recepcion");
         if (passResepcion.equals("123")) {
             JOptionPane.showMessageDialog(rootPane, "Contraseña Correcta");
-            JOptionPane.showMessageDialog(rootPane, "Hola Yir");
+            JOptionPane.showMessageDialog(rootPane, "Hola Raul");
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
             this.dispose();
