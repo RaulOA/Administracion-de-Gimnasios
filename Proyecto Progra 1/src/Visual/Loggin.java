@@ -79,8 +79,6 @@ public class Loggin extends javax.swing.JFrame {
     private void btnRecepcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecepcionActionPerformed
         String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Recepcion");
         if (passResepcion.equals("123")) {
-            JOptionPane.showMessageDialog(rootPane, "Contraseña Correcta");
-            JOptionPane.showMessageDialog(rootPane, "Hola Yir por segunda vezz");
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
             this.dispose();
@@ -92,7 +90,6 @@ public class Loggin extends javax.swing.JFrame {
     private void btnTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainersActionPerformed
         String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Entrenador");
         if (passResepcion.equals("456")) {
-            JOptionPane.showMessageDialog(rootPane, "Contraseña Correcta");
             Trainers ventana = new Trainers();
             ventana.setVisible(true);
             this.dispose();
