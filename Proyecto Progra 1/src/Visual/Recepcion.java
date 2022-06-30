@@ -1,13 +1,17 @@
 
 package Visual;
 
+import desplazable.Desface;
+
 public class Recepcion extends javax.swing.JFrame {
 
     /**
      * Creates new form Recepcion
      */
+    Desface desplace; 
     public Recepcion() {
         initComponents();
+        desplace = new Desface();
     }
 
     /**
@@ -38,24 +42,79 @@ public class Recepcion extends javax.swing.JFrame {
 
         panelMenu.setBackground(new java.awt.Color(57, 57, 57));
 
-        btndesplegar.setText("jButton1");
+        btndesplegar.setBackground(new java.awt.Color(57, 57, 57));
+        btndesplegar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btndesplegar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/menu.png"))); // NOI18N
+        btndesplegar.setText("Opciones                         ");
+        btndesplegar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btndesplegar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btndesplegar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btndesplegar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btndesplegarMouseClicked(evt);
+            }
+        });
+        btndesplegar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndesplegarActionPerformed(evt);
+            }
+        });
 
-        btninicio.setText("jButton1");
+        btninicio.setBackground(new java.awt.Color(57, 57, 57));
+        btninicio.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btninicio.setText("Inicio ");
+        btninicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btninicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninicioActionPerformed(evt);
+            }
+        });
 
-        btninscribir.setText("jButton1");
+        btninscribir.setBackground(new java.awt.Color(57, 57, 57));
+        btninscribir.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btninscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/users.png"))); // NOI18N
+        btninscribir.setText("Nueva Inscripción         ");
+        btninscribir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btninscribir.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btninscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btninscribirActionPerformed(evt);
+            }
+        });
 
-        btnlistaclientes.setText("jButton1");
+        btnlistaclientes.setBackground(new java.awt.Color(57, 57, 57));
+        btnlistaclientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnlistaclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/list.png"))); // NOI18N
+        btnlistaclientes.setText("Lista de clientes             ");
+        btnlistaclientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnlistaclientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
-        btnmensualidad.setText("jButton1");
+        btnmensualidad.setBackground(new java.awt.Color(57, 57, 57));
+        btnmensualidad.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnmensualidad.setText("Mensualidades");
+        btnmensualidad.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnmensualidad.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btnmensualidad.setMaximumSize(new java.awt.Dimension(638, 520));
+        btnmensualidad.setMinimumSize(new java.awt.Dimension(638, 520));
+        btnmensualidad.setPreferredSize(new java.awt.Dimension(638, 520));
         btnmensualidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnmensualidadActionPerformed(evt);
             }
         });
 
-        btnagendar.setText("jButton1");
+        btnagendar.setBackground(new java.awt.Color(57, 57, 57));
+        btnagendar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnagendar.setText("Agendar cita");
+        btnagendar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 
-        btnvender.setText("jButton1");
+        btnvender.setBackground(new java.awt.Color(57, 57, 57));
+        btnvender.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnvender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/shopping-bag.png"))); // NOI18N
+        btnvender.setText("Venta de productos      ");
+        btnvender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnvender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnvender.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
@@ -63,15 +122,16 @@ public class Recepcion extends javax.swing.JFrame {
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnlistaclientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btninscribir, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btndesplegar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnmensualidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnagendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnvender, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btninicio, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnmensualidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(btnagendar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnvender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnlistaclientes)
+                    .addComponent(btninscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btninicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +159,7 @@ public class Recepcion extends javax.swing.JFrame {
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addComponent(panelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(649, Short.MAX_VALUE))
+                .addGap(0, 610, Short.MAX_VALUE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,6 +183,26 @@ public class Recepcion extends javax.swing.JFrame {
     private void btnmensualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmensualidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnmensualidadActionPerformed
+
+    private void btninicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btninicioActionPerformed
+
+    private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btninscribirActionPerformed
+
+    private void btndesplegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndesplegarActionPerformed
+        
+    }//GEN-LAST:event_btndesplegarActionPerformed
+
+    private void btndesplegarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndesplegarMouseClicked
+        if (panelMenu.getX() == 0){
+            desplace.desplazarIzquierda(panelMenu, panelMenu.getX(), -180, 10, 10);
+        }else if (panelMenu.getX() == -180){
+            desplace.desplazarDerecha(panelMenu, panelMenu.getX(),0, 10, 10);
+        
+    }//GEN-LAST:event_btndesplegarMouseClicked
 
     /**
      * @param args the command line arguments
