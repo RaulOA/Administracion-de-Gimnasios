@@ -87,6 +87,7 @@ public class Loggin extends javax.swing.JFrame {
         String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Recepcion");
         if (passResepcion.equals("123")) {
             JOptionPane.showMessageDialog(rootPane, "Contraseña Correcta");
+            JOptionPane.showMessageDialog(rootPane, "Hola Yir");
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
             this.dispose();
