@@ -81,11 +81,11 @@
                           <Component id="btnmensualidad" alignment="0" pref="0" max="32767" attributes="0"/>
                           <Component id="btnagendar" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnvender" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnlistaclientes" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="btninscribir" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="btninicio" alignment="0" max="32767" attributes="0"/>
                           <Component id="btndesplegar" alignment="0" max="32767" attributes="0"/>
                           <Component id="btnvolver" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btninscribir" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnlistaclientes" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
