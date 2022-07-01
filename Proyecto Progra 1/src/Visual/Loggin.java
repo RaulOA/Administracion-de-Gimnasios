@@ -37,9 +37,11 @@ public class Loggin extends javax.swing.JFrame {
         btnRecepcion.setBackground(new java.awt.Color(57, 57, 57));
         btnRecepcion.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnRecepcion.setForeground(new java.awt.Color(255, 255, 255));
-        btnRecepcion.setText("Recepción");
+        btnRecepcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/bar-chart-outline.png"))); // NOI18N
+        btnRecepcion.setText(" Recepción");
         btnRecepcion.setAlignmentY(0.0F);
         btnRecepcion.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
+        btnRecepcion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRecepcion.setPreferredSize(new java.awt.Dimension(70, 20));
         btnRecepcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,9 +52,11 @@ public class Loggin extends javax.swing.JFrame {
         btnTrainers.setBackground(new java.awt.Color(57, 57, 57));
         btnTrainers.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnTrainers.setForeground(new java.awt.Color(255, 255, 255));
+        btnTrainers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/barbell-outline.png"))); // NOI18N
         btnTrainers.setText("Trainers");
         btnTrainers.setAlignmentY(0.0F);
         btnTrainers.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
+        btnTrainers.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTrainers.setPreferredSize(new java.awt.Dimension(70, 20));
         btnTrainers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -65,9 +65,11 @@ public class Recepcion extends javax.swing.JFrame {
         btninicio.setBackground(new java.awt.Color(57, 57, 57));
         btninicio.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btninicio.setForeground(new java.awt.Color(255, 255, 255));
-        btninicio.setText("Inicio ");
+        btninicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/home-outline.png"))); // NOI18N
+        btninicio.setText("Inicio                                ");
         btninicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btninicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btninicio.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         btninicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btninicioActionPerformed(evt);
@@ -77,7 +79,7 @@ public class Recepcion extends javax.swing.JFrame {
         btninscribir.setBackground(new java.awt.Color(57, 57, 57));
         btninscribir.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btninscribir.setForeground(new java.awt.Color(255, 255, 255));
-        btninscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/users.png"))); // NOI18N
+        btninscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/user-plus.png"))); // NOI18N
         btninscribir.setText("Nueva Inscripción         ");
         btninscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btninscribir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -91,7 +93,7 @@ public class Recepcion extends javax.swing.JFrame {
         btnlistaclientes.setBackground(new java.awt.Color(57, 57, 57));
         btnlistaclientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnlistaclientes.setForeground(new java.awt.Color(255, 255, 255));
-        btnlistaclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/list.png"))); // NOI18N
+        btnlistaclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/users.png"))); // NOI18N
         btnlistaclientes.setText("Lista de clientes             ");
         btnlistaclientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnlistaclientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -140,7 +142,8 @@ public class Recepcion extends javax.swing.JFrame {
         btnvolver.setBackground(new java.awt.Color(57, 57, 57));
         btnvolver.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnvolver.setForeground(new java.awt.Color(255, 255, 255));
-        btnvolver.setText("Volver");
+        btnvolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/return-down-back-outline.png"))); // NOI18N
+        btnvolver.setText("Volver                             ");
         btnvolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnvolver.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnvolver.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);

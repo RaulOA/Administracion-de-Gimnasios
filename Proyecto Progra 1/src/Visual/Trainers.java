@@ -51,22 +51,24 @@ public class Trainers extends javax.swing.JFrame {
         btnregistrar.setBackground(new java.awt.Color(57, 57, 57));
         btnregistrar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnregistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnregistrar.setText("Registrarse");
+        btnregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/edit-3.png"))); // NOI18N
+        btnregistrar.setText("Registrarse                     ");
         btnregistrar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnregistrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         btnclientes.setBackground(new java.awt.Color(57, 57, 57));
         btnclientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnclientes.setForeground(new java.awt.Color(255, 255, 255));
-        btnclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/users.png"))); // NOI18N
-        btnclientes.setText("Clientes                          ");
+        btnclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/accessibility-outline.png"))); // NOI18N
+        btnclientes.setText("Clientes                           ");
         btnclientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnclientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         btnpendientes.setBackground(new java.awt.Color(57, 57, 57));
         btnpendientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnpendientes.setForeground(new java.awt.Color(255, 255, 255));
-        btnpendientes.setText("Generar rutinas");
+        btnpendientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/clipboard.png"))); // NOI18N
+        btnpendientes.setText("Generar rutinas            ");
         btnpendientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnpendientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
@@ -74,14 +76,15 @@ public class Trainers extends javax.swing.JFrame {
         btngenerar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btngenerar.setForeground(new java.awt.Color(255, 255, 255));
         btngenerar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/scale-outline.png"))); // NOI18N
-        btngenerar.setText("Pendientes                    ");
+        btngenerar.setText("Pendientes                     ");
         btngenerar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btngenerar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         btnvolver2.setBackground(new java.awt.Color(57, 57, 57));
         btnvolver2.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnvolver2.setForeground(new java.awt.Color(255, 255, 255));
-        btnvolver2.setText("Volver");
+        btnvolver2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/return-down-back-outline.png"))); // NOI18N
+        btnvolver2.setText("Volver                             ");
         btnvolver2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnvolver2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnvolver2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
@@ -133,7 +136,7 @@ public class Trainers extends javax.swing.JFrame {
             panelprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelprincipalLayout.createSequentialGroup()
                 .addComponent(panelmenu2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 608, Short.MAX_VALUE))
+                .addGap(0, 607, Short.MAX_VALUE))
         );
         panelprincipalLayout.setVerticalGroup(
             panelprincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
