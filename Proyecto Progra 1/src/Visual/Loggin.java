@@ -78,6 +78,7 @@ public class Loggin extends javax.swing.JFrame {
 
     private void btnRecepcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecepcionActionPerformed
         String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Recepcion");
+        System.out.println("lasdfas");
         if (passResepcion.equals("123")) {
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
