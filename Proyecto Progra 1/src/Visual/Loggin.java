@@ -3,9 +3,6 @@ package Visual;
 
 import javax.swing.JOptionPane;
 	
-import java.util.Calendar;
-	
-import java.util.GregorianCalendar;
 public class Loggin extends javax.swing.JFrame {
 
     /**
@@ -114,8 +111,6 @@ public class Loggin extends javax.swing.JFrame {
     private void btnRecepcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecepcionActionPerformed
         String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Recepcion");
         if (passResepcion.equals("123")) {
-            Calendar today = Calendar.getInstance();
-            System.out.println("Today is " + today.getTime());
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
             this.dispose();

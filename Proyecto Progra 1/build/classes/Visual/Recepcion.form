@@ -138,6 +138,7 @@
                 <Property name="horizontalTextPosition" type="int" value="10"/>
               </Properties>
               <Events>
+                <EventHandler event="componentAdded" listener="java.awt.event.ContainerListener" parameters="java.awt.event.ContainerEvent" handler="btndesplegarComponentAdded"/>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btndesplegarMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btndesplegarActionPerformed"/>
               </Events>

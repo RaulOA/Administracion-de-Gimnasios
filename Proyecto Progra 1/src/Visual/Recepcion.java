@@ -51,6 +51,11 @@ public class Recepcion extends javax.swing.JFrame {
         btndesplegar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btndesplegar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btndesplegar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btndesplegar.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                btndesplegarComponentAdded(evt);
+            }
+        });
         btndesplegar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btndesplegarMouseClicked(evt);
@@ -252,6 +257,10 @@ public class Recepcion extends javax.swing.JFrame {
     private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnagendarActionPerformed
+
+    private void btndesplegarComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_btndesplegarComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btndesplegarComponentAdded
 
     public void run() {
         new Recepcion().setVisible(true);
