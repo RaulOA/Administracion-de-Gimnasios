@@ -32,6 +32,7 @@ public class Recepcion extends javax.swing.JFrame {
         btnmensualidad = new javax.swing.JButton();
         btnagendar = new javax.swing.JButton();
         btnvender = new javax.swing.JButton();
+        btnvolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Recepcion");
@@ -44,6 +45,7 @@ public class Recepcion extends javax.swing.JFrame {
 
         btndesplegar.setBackground(new java.awt.Color(57, 57, 57));
         btndesplegar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btndesplegar.setForeground(new java.awt.Color(255, 255, 255));
         btndesplegar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/menu.png"))); // NOI18N
         btndesplegar.setText("Opciones                         ");
         btndesplegar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -62,7 +64,9 @@ public class Recepcion extends javax.swing.JFrame {
 
         btninicio.setBackground(new java.awt.Color(57, 57, 57));
         btninicio.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btninicio.setForeground(new java.awt.Color(255, 255, 255));
         btninicio.setText("Inicio ");
+        btninicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btninicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btninicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,8 +76,10 @@ public class Recepcion extends javax.swing.JFrame {
 
         btninscribir.setBackground(new java.awt.Color(57, 57, 57));
         btninscribir.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btninscribir.setForeground(new java.awt.Color(255, 255, 255));
         btninscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/users.png"))); // NOI18N
         btninscribir.setText("Nueva Inscripción         ");
+        btninscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btninscribir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btninscribir.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btninscribir.addActionListener(new java.awt.event.ActionListener() {
@@ -84,14 +90,19 @@ public class Recepcion extends javax.swing.JFrame {
 
         btnlistaclientes.setBackground(new java.awt.Color(57, 57, 57));
         btnlistaclientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnlistaclientes.setForeground(new java.awt.Color(255, 255, 255));
         btnlistaclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/list.png"))); // NOI18N
         btnlistaclientes.setText("Lista de clientes             ");
+        btnlistaclientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnlistaclientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnlistaclientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         btnmensualidad.setBackground(new java.awt.Color(57, 57, 57));
         btnmensualidad.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
-        btnmensualidad.setText("Mensualidades");
+        btnmensualidad.setForeground(new java.awt.Color(255, 255, 255));
+        btnmensualidad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/cash-outline (1).png"))); // NOI18N
+        btnmensualidad.setText("Mensualidades              ");
+        btnmensualidad.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnmensualidad.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnmensualidad.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         btnmensualidad.setMaximumSize(new java.awt.Dimension(638, 520));
@@ -105,16 +116,39 @@ public class Recepcion extends javax.swing.JFrame {
 
         btnagendar.setBackground(new java.awt.Color(57, 57, 57));
         btnagendar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
-        btnagendar.setText("Agendar cita");
+        btnagendar.setForeground(new java.awt.Color(255, 255, 255));
+        btnagendar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/calendar-outline.png"))); // NOI18N
+        btnagendar.setText("Agendar cita                  ");
+        btnagendar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnagendar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnagendar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btnagendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagendarActionPerformed(evt);
+            }
+        });
 
         btnvender.setBackground(new java.awt.Color(57, 57, 57));
         btnvender.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnvender.setForeground(new java.awt.Color(255, 255, 255));
         btnvender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/shopping-bag.png"))); // NOI18N
         btnvender.setText("Venta de productos      ");
         btnvender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnvender.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnvender.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+
+        btnvolver.setBackground(new java.awt.Color(57, 57, 57));
+        btnvolver.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnvolver.setForeground(new java.awt.Color(255, 255, 255));
+        btnvolver.setText("Volver");
+        btnvolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnvolver.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnvolver.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btnvolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvolverActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
@@ -123,13 +157,14 @@ public class Recepcion extends javax.swing.JFrame {
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btndesplegar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnmensualidad, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(btnagendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnvender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnlistaclientes)
                     .addComponent(btninscribir)
-                    .addComponent(btninicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btninicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btndesplegar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnvolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
@@ -149,7 +184,9 @@ public class Recepcion extends javax.swing.JFrame {
                 .addComponent(btnagendar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnvender, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnvolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
@@ -203,6 +240,16 @@ public class Recepcion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btndesplegarMouseClicked
 
+    private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
+        Loggin volverloggin = new Loggin();
+            volverloggin.setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_btnvolverActionPerformed
+
+    private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnagendarActionPerformed
+
     public void run() {
         new Recepcion().setVisible(true);
             }
@@ -215,6 +262,7 @@ public class Recepcion extends javax.swing.JFrame {
     private javax.swing.JButton btnlistaclientes;
     private javax.swing.JButton btnmensualidad;
     private javax.swing.JButton btnvender;
+    private javax.swing.JButton btnvolver;
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
