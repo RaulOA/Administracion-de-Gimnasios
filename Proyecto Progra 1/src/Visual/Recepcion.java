@@ -1,17 +1,52 @@
 
 package Visual;
 
+import static Datos.ArrayDatosClientes.listaClientes;
+import Datos.DatosClientes;
 import desplazable.Desface;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class Recepcion extends javax.swing.JFrame {
 
     /**
      * Creates new form Recepcion
      */
+    DefaultTableModel modelTable = new DefaultTableModel();
+    
     Desface desplace; 
     public Recepcion() {
         initComponents();
         desplace = new Desface();
+        
+        jPanelInscripcion.setVisible(false);
+        jPanelListaClientes.setVisible(false);
+        
+        tablaListaClientes.setModel(modelTable);
+        modelTable.addColumn("Nombre");
+        modelTable.addColumn("Apellido1");
+        modelTable.addColumn("Apellido2");
+        modelTable.addColumn("Sexo");
+        cargarDatos();
+        cargarInscripcion();
+          
+    }
+    public void cargarDatos(){
+        
+        modelTable.setRowCount(0);
+        
+        for (int i = 0;i< listaClientes.size() ; i++) {
+            
+            modelTable.addRow(new Object []{
+                
+                listaClientes.get(i).getNombre(),
+                listaClientes.get(i).getApellido1(),
+                listaClientes.get(i).getApellido2(),
+                listaClientes.get(i).getSexo(),
+            
+            });
+        }
+    
     }
 
     /**
@@ -23,6 +58,7 @@ public class Recepcion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        sexo = new javax.swing.ButtonGroup();
         panelPrincipal = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
         btndesplegar = new javax.swing.JButton();
@@ -33,6 +69,20 @@ public class Recepcion extends javax.swing.JFrame {
         btnagendar = new javax.swing.JButton();
         btnvender = new javax.swing.JButton();
         btnvolver = new javax.swing.JButton();
+        jPanelInscripcion = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtInscripcionNombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtInscripcionApellido1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        txtInscripcionApellido2 = new javax.swing.JTextField();
+        radioMasculino = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        radioFemenino = new javax.swing.JRadioButton();
+        btnInscribir = new javax.swing.JButton();
+        jPanelListaClientes = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaListaClientes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Recepcion");
@@ -103,6 +153,11 @@ public class Recepcion extends javax.swing.JFrame {
         btnlistaclientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnlistaclientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnlistaclientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btnlistaclientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlistaclientesActionPerformed(evt);
+            }
+        });
 
         btnmensualidad.setBackground(new java.awt.Color(57, 57, 57));
         btnmensualidad.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
@@ -194,7 +249,129 @@ public class Recepcion extends javax.swing.JFrame {
                 .addComponent(btnvender, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnvolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel1.setText("Nombre");
+
+        txtInscripcionNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInscripcionNombreActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Apellido 1");
+
+        txtInscripcionApellido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInscripcionApellido1ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Apellido 2");
+
+        txtInscripcionApellido2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtInscripcionApellido2ActionPerformed(evt);
+            }
+        });
+
+        sexo.add(radioMasculino);
+        radioMasculino.setText("Masculino");
+
+        jLabel4.setText("Sexo");
+
+        sexo.add(radioFemenino);
+        radioFemenino.setText("Femenino");
+        radioFemenino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioFemeninoActionPerformed(evt);
+            }
+        });
+
+        btnInscribir.setText("Inscribir");
+        btnInscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInscribirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelInscripcionLayout = new javax.swing.GroupLayout(jPanelInscripcion);
+        jPanelInscripcion.setLayout(jPanelInscripcionLayout);
+        jPanelInscripcionLayout.setHorizontalGroup(
+            jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelInscripcionLayout.createSequentialGroup()
+                .addGroup(jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelInscripcionLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel3)
+                            .addComponent(txtInscripcionApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtInscripcionApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(txtInscripcionNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelInscripcionLayout.createSequentialGroup()
+                                .addComponent(radioMasculino)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(radioFemenino))))
+                    .addGroup(jPanelInscripcionLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(btnInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(32, Short.MAX_VALUE))
+        );
+        jPanelInscripcionLayout.setVerticalGroup(
+            jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelInscripcionLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtInscripcionNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtInscripcionApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtInscripcionApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioMasculino)
+                    .addComponent(radioFemenino))
+                .addGap(61, 61, 61)
+                .addComponent(btnInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        tablaListaClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tablaListaClientes);
+
+        javax.swing.GroupLayout jPanelListaClientesLayout = new javax.swing.GroupLayout(jPanelListaClientes);
+        jPanelListaClientes.setLayout(jPanelListaClientesLayout);
+        jPanelListaClientesLayout.setHorizontalGroup(
+            jPanelListaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListaClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelListaClientesLayout.setVerticalGroup(
+            jPanelListaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelListaClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
@@ -203,11 +380,21 @@ public class Recepcion extends javax.swing.JFrame {
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addComponent(panelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 622, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelListaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanelListaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelInscripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -233,7 +420,8 @@ public class Recepcion extends javax.swing.JFrame {
     }//GEN-LAST:event_btninicioActionPerformed
 
     private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
-        // TODO add your handling code here:
+        jPanelInscripcion.setVisible(true);
+        jPanelListaClientes.setVisible(false);
     }//GEN-LAST:event_btninscribirActionPerformed
 
     private void btndesplegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndesplegarActionPerformed
@@ -262,11 +450,72 @@ public class Recepcion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btndesplegarComponentAdded
 
+    private void txtInscripcionNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInscripcionNombreActionPerformed
+
+    private void txtInscripcionApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionApellido1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInscripcionApellido1ActionPerformed
+
+    private void txtInscripcionApellido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionApellido2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInscripcionApellido2ActionPerformed
+
+    private void radioFemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemeninoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioFemeninoActionPerformed
+
+    private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
+
+        try {
+
+            String nombre = txtInscripcionNombre.getText();
+            String apellido1 = txtInscripcionApellido1.getText();
+            String apellido2 = txtInscripcionApellido2.getText();
+            String sexo ="";
+            if (radioMasculino.isSelected()||radioFemenino.isSelected()) {
+                if (radioMasculino.isSelected()) {
+                    sexo="Masculino";
+                }else if (radioFemenino.isSelected()){
+                    sexo = "Femenino";
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane,"Debe seleccionar el sexo");
+            }
+
+            DatosClientes nuevoCliente = new DatosClientes();
+            nuevoCliente.setNombre(nombre);
+            nuevoCliente.setApellido1(apellido1);
+            nuevoCliente.setApellido2(apellido2);
+            nuevoCliente.setSexo(sexo);
+
+            listaClientes.add(nuevoCliente);
+            JOptionPane.showMessageDialog(rootPane,"Cliente Inscrito");
+
+            cargarDatos();
+            txtInscripcionNombre.setText("");
+            txtInscripcionApellido1.setText("");
+            txtInscripcionApellido2.setText("");
+
+        } catch (Exception e) {
+
+            JOptionPane.showMessageDialog(rootPane,"Ocurrio un error");
+        }
+    }//GEN-LAST:event_btnInscribirActionPerformed
+
+    private void btnlistaclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistaclientesActionPerformed
+       jPanelInscripcion.setVisible(false);
+       jPanelListaClientes.setVisible(true);
+    }//GEN-LAST:event_btnlistaclientesActionPerformed
+
+        
     public void run() {
         new Recepcion().setVisible(true);
             }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnInscribir;
     private javax.swing.JButton btnagendar;
     private javax.swing.JButton btndesplegar;
     private javax.swing.JButton btninicio;
@@ -275,7 +524,28 @@ public class Recepcion extends javax.swing.JFrame {
     private javax.swing.JButton btnmensualidad;
     private javax.swing.JButton btnvender;
     private javax.swing.JButton btnvolver;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanelInscripcion;
+    private javax.swing.JPanel jPanelListaClientes;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelPrincipal;
+    private javax.swing.JRadioButton radioFemenino;
+    private javax.swing.JRadioButton radioMasculino;
+    private javax.swing.ButtonGroup sexo;
+    private javax.swing.JTable tablaListaClientes;
+    private javax.swing.JTextField txtInscripcionApellido1;
+    private javax.swing.JTextField txtInscripcionApellido2;
+    private javax.swing.JTextField txtInscripcionNombre;
     // End of variables declaration//GEN-END:variables
-        }
+private void cargarInscripcion() {
+        
+        
+        
+        
+    }        
+}
+
