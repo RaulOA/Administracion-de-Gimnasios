@@ -252,36 +252,59 @@ public class Recepcion extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel1.setText("Nombre");
+        jPanelInscripcion.setBackground(new java.awt.Color(102, 102, 102));
+        jPanelInscripcion.setForeground(new java.awt.Color(102, 102, 102));
 
+        jLabel1.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Nombre:");
+
+        txtInscripcionNombre.setBackground(new java.awt.Color(153, 153, 153));
+        txtInscripcionNombre.setFont(new java.awt.Font("Eras Medium ITC", 0, 15)); // NOI18N
         txtInscripcionNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtInscripcionNombreActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Apellido 1");
+        jLabel2.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Apellido 1:");
 
+        txtInscripcionApellido1.setBackground(new java.awt.Color(153, 153, 153));
+        txtInscripcionApellido1.setFont(new java.awt.Font("Eras Medium ITC", 0, 15)); // NOI18N
         txtInscripcionApellido1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtInscripcionApellido1ActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Apellido 2");
+        jLabel3.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Apellido 2:");
 
+        txtInscripcionApellido2.setBackground(new java.awt.Color(153, 153, 153));
+        txtInscripcionApellido2.setFont(new java.awt.Font("Eras Medium ITC", 0, 15)); // NOI18N
         txtInscripcionApellido2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtInscripcionApellido2ActionPerformed(evt);
             }
         });
 
+        radioMasculino.setBackground(new java.awt.Color(153, 153, 153));
         sexo.add(radioMasculino);
+        radioMasculino.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        radioMasculino.setForeground(new java.awt.Color(255, 255, 255));
         radioMasculino.setText("Masculino");
 
-        jLabel4.setText("Sexo");
+        jLabel4.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Sexo:");
 
+        radioFemenino.setBackground(new java.awt.Color(153, 153, 153));
         sexo.add(radioFemenino);
+        radioFemenino.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        radioFemenino.setForeground(new java.awt.Color(255, 255, 255));
         radioFemenino.setText("Femenino");
         radioFemenino.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -289,6 +312,9 @@ public class Recepcion extends javax.swing.JFrame {
             }
         });
 
+        btnInscribir.setBackground(new java.awt.Color(0, 0, 0));
+        btnInscribir.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnInscribir.setForeground(new java.awt.Color(255, 255, 255));
         btnInscribir.setText("Inscribir");
         btnInscribir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -305,48 +331,54 @@ public class Recepcion extends javax.swing.JFrame {
                     .addGroup(jPanelInscripcionLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(txtInscripcionApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtInscripcionApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(txtInscripcionNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel1)
+                                .addComponent(txtInscripcionApellido2, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                                .addComponent(txtInscripcionApellido1)
+                                .addComponent(txtInscripcionNombre))
                             .addGroup(jPanelInscripcionLayout.createSequentialGroup()
+                                .addGap(19, 19, 19)
                                 .addComponent(radioMasculino)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(radioFemenino))))
                     .addGroup(jPanelInscripcionLayout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addComponent(btnInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addGap(76, 76, 76)
+                        .addComponent(btnInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         jPanelInscripcionLayout.setVerticalGroup(
             jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInscripcionLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtInscripcionNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtInscripcionApellido1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(txtInscripcionApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelInscripcionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(radioMasculino)
                     .addComponent(radioFemenino))
-                .addGap(61, 61, 61)
-                .addComponent(btnInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(btnInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
 
+        jPanelListaClientes.setBackground(new java.awt.Color(102, 102, 102));
+
+        tablaListaClientes.setBackground(new java.awt.Color(102, 102, 102));
+        tablaListaClientes.setForeground(new java.awt.Color(102, 102, 102));
         tablaListaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -363,7 +395,7 @@ public class Recepcion extends javax.swing.JFrame {
             jPanelListaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelListaClientesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelListaClientesLayout.setVerticalGroup(
@@ -383,8 +415,7 @@ public class Recepcion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanelInscripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelListaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jPanelListaClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,7 +432,9 @@ public class Recepcion extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -410,61 +443,6 @@ public class Recepcion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnmensualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmensualidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnmensualidadActionPerformed
-
-    private void btninicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btninicioActionPerformed
-
-    private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
-        jPanelInscripcion.setVisible(true);
-        jPanelListaClientes.setVisible(false);
-    }//GEN-LAST:event_btninscribirActionPerformed
-
-    private void btndesplegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndesplegarActionPerformed
-       
-    }//GEN-LAST:event_btndesplegarActionPerformed
-
-    private void btndesplegarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndesplegarMouseClicked
-
-        desplace.desplazarIzquierda(panelMenu, panelMenu.getX(), -180, 10, 10);
-        if (panelMenu.getX() == -180){
-            desplace.desplazarDerecha(panelMenu, panelMenu.getX(),0, 10, 10);
-        }
-    }//GEN-LAST:event_btndesplegarMouseClicked
-
-    private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
-        Loggin volverloggin = new Loggin();
-            volverloggin.setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_btnvolverActionPerformed
-
-    private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnagendarActionPerformed
-
-    private void btndesplegarComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_btndesplegarComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btndesplegarComponentAdded
-
-    private void txtInscripcionNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtInscripcionNombreActionPerformed
-
-    private void txtInscripcionApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionApellido1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtInscripcionApellido1ActionPerformed
-
-    private void txtInscripcionApellido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionApellido2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtInscripcionApellido2ActionPerformed
-
-    private void radioFemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemeninoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_radioFemeninoActionPerformed
 
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
 
@@ -504,10 +482,65 @@ public class Recepcion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnInscribirActionPerformed
 
+    private void radioFemeninoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioFemeninoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioFemeninoActionPerformed
+
+    private void txtInscripcionApellido2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionApellido2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInscripcionApellido2ActionPerformed
+
+    private void txtInscripcionApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionApellido1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInscripcionApellido1ActionPerformed
+
+    private void txtInscripcionNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtInscripcionNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtInscripcionNombreActionPerformed
+
+    private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
+        Loggin volverloggin = new Loggin();
+        volverloggin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnvolverActionPerformed
+
+    private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnagendarActionPerformed
+
+    private void btnmensualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmensualidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnmensualidadActionPerformed
+
     private void btnlistaclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistaclientesActionPerformed
-       jPanelInscripcion.setVisible(false);
-       jPanelListaClientes.setVisible(true);
+        jPanelInscripcion.setVisible(false);
+        jPanelListaClientes.setVisible(true);
     }//GEN-LAST:event_btnlistaclientesActionPerformed
+
+    private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
+        jPanelInscripcion.setVisible(true);
+        jPanelListaClientes.setVisible(false);
+    }//GEN-LAST:event_btninscribirActionPerformed
+
+    private void btninicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btninicioActionPerformed
+
+    private void btndesplegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndesplegarActionPerformed
+
+    }//GEN-LAST:event_btndesplegarActionPerformed
+
+    private void btndesplegarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndesplegarMouseClicked
+
+        desplace.desplazarIzquierda(panelMenu, panelMenu.getX(), -180, 10, 10);
+        if (panelMenu.getX() == -180){
+            desplace.desplazarDerecha(panelMenu, panelMenu.getX(),0, 10, 10);
+        }
+    }//GEN-LAST:event_btndesplegarMouseClicked
+
+    private void btndesplegarComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_btndesplegarComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btndesplegarComponentAdded
 
         
     public void run() {
