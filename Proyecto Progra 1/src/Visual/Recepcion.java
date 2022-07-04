@@ -62,7 +62,6 @@ public class Recepcion extends javax.swing.JFrame {
         panelPrincipal = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
         btndesplegar = new javax.swing.JButton();
-        btninicio = new javax.swing.JButton();
         btninscribir = new javax.swing.JButton();
         btnlistaclientes = new javax.swing.JButton();
         btnmensualidad = new javax.swing.JButton();
@@ -114,20 +113,6 @@ public class Recepcion extends javax.swing.JFrame {
         btndesplegar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btndesplegarActionPerformed(evt);
-            }
-        });
-
-        btninicio.setBackground(new java.awt.Color(57, 57, 57));
-        btninicio.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
-        btninicio.setForeground(new java.awt.Color(255, 255, 255));
-        btninicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/home-outline.png"))); // NOI18N
-        btninicio.setText("Inicio                                ");
-        btninicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btninicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btninicio.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        btninicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btninicioActionPerformed(evt);
             }
         });
 
@@ -223,7 +208,6 @@ public class Recepcion extends javax.swing.JFrame {
                     .addComponent(btnmensualidad, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(btnagendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnvender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btninicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btndesplegar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnvolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btninscribir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -235,8 +219,6 @@ public class Recepcion extends javax.swing.JFrame {
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btndesplegar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btninicio, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btninscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -425,7 +407,7 @@ public class Recepcion extends javax.swing.JFrame {
                 .addGroup(panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelListaClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanelInscripcion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -522,10 +504,6 @@ public class Recepcion extends javax.swing.JFrame {
         jPanelListaClientes.setVisible(false);
     }//GEN-LAST:event_btninscribirActionPerformed
 
-    private void btninicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninicioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btninicioActionPerformed
-
     private void btndesplegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndesplegarActionPerformed
 
     }//GEN-LAST:event_btndesplegarActionPerformed
@@ -551,7 +529,6 @@ public class Recepcion extends javax.swing.JFrame {
     private javax.swing.JButton btnInscribir;
     private javax.swing.JButton btnagendar;
     private javax.swing.JButton btndesplegar;
-    private javax.swing.JButton btninicio;
     private javax.swing.JButton btninscribir;
     private javax.swing.JButton btnlistaclientes;
     private javax.swing.JButton btnmensualidad;
