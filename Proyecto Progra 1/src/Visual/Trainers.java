@@ -1,14 +1,15 @@
 
 package Visual;
 
-import desplazable.Desface; 
 
 public class Trainers extends javax.swing.JFrame {
 
-    Desface desplace;
     public Trainers() {
         initComponents();
-        desplace = new Desface();
+
+        //Yir. Instrucciones para que aparezca en el centro y no se pueda ajustar la pantalla. 
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
 
@@ -152,37 +153,10 @@ public class Trainers extends javax.swing.JFrame {
     }//GEN-LAST:event_btnvolver2ActionPerformed
 
     private void btnopcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnopcionesMouseClicked
-        desplace.desplazarIzquierda(panelmenu2, panelmenu2.getX(), -180, 10, 10);
-        if (panelmenu2.getX() == -180){
-            desplace.desplazarDerecha(panelmenu2, panelmenu2.getX(), 225, 10, 10);
-        }
+
     }//GEN-LAST:event_btnopcionesMouseClicked
 
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Trainers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Trainers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Trainers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Trainers.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Trainers().setVisible(true);

@@ -1,5 +1,6 @@
 
 package Visual;
+
 //raul. imports que se utilizan en cada evento de boton, para llamar a los paneles de FrameRecepcion --------------
 import FramesRecepcion.PanelAgendarCita;
 import FramesRecepcion.PanelListaClientes;
@@ -9,7 +10,6 @@ import FramesRecepcion.PanelOpciones;
 import FramesRecepcion.PanelVentaProductos;
 //------------------------------------------------------------
 
-import desplazable.Desface;
 import java.awt.BorderLayout;
 
 //raul. import que se utiliza en el metodo ShowPanel()-----------
@@ -17,14 +17,18 @@ import javax.swing.JPanel;
 //------------------------------------------------------------
 
 public class Recepcion extends javax.swing.JFrame {
-    Desface desplace; 
+
     public Recepcion() {
-        initComponents();
-        desplace = new Desface();        
+        initComponents();        
         
-        //raul. Este es el primer panel que se mostrara una ves se abra la pantalla de recepcion---------------
+        //raul. Este es el primer panel que se mostrara una vez se abra la pantalla de recepcion---------------
         PanelOpciones p1 = new PanelOpciones();
         ShowPanel(p1);
+        
+        //Yir. Instrucciones para que aparezca en el centro y no se pueda ajustar la pantalla. 
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        
         //------------------------------------------------------------
     }
     @SuppressWarnings("unchecked")
@@ -224,7 +228,7 @@ public class Recepcion extends javax.swing.JFrame {
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(panelMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(panelPrincipalLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(CentralFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -266,13 +270,10 @@ public class Recepcion extends javax.swing.JFrame {
 
     private void btndesplegarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndesplegarMouseClicked
 
-        desplace.desplazarIzquierda(panelMenu, panelMenu.getX(), -180, 10, 10);
-        if (panelMenu.getX() == -180){
-            desplace.desplazarDerecha(panelMenu, panelMenu.getX(),0, 10, 10);
-        }
     }//GEN-LAST:event_btndesplegarMouseClicked
 
     private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
+        // Yir. Instrucción para volver a la ventana de loggin
         Loggin volverloggin = new Loggin();
             volverloggin.setVisible(true);
             this.dispose();
@@ -308,7 +309,7 @@ public class Recepcion extends javax.swing.JFrame {
             }
     private void ShowPanel(JPanel p){
         //raul. Metodo para mostrar paneles ------------
-        p.setSize(384, 469);
+        p.setSize(530, 475);
         p.setLocation(0, 0);
         CentralFrame.removeAll();
         CentralFrame.add(p, BorderLayout.CENTER);
