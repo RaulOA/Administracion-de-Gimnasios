@@ -220,6 +220,9 @@
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="horizontalTextPosition" type="int" value="10"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnlistaclientesActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnmensualidad">
               <Properties>
@@ -333,6 +336,9 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="CentralFrame">
+          <Properties>
+            <Property name="requestFocusEnabled" type="boolean" value="false"/>
+          </Properties>
 
           <Layout>
             <DimensionLayout dim="0">

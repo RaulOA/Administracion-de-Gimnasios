@@ -1,11 +1,20 @@
 
 package Visual;
-//raul. aqui importamos los paneles hechos en el paquete FramesRecepcion para poder manipularlos
+//raul. imports que se utilizan en cada evento de boton, para llamar a los paneles de FrameRecepcion --------------
 import FramesRecepcion.PanelAgendarCita;
+import FramesRecepcion.PanelListaClientes;
+import FramesRecepcion.PanelMensualidades;
+import FramesRecepcion.PanelNuevaInscripcion;
+import FramesRecepcion.PanelOpciones;
 import FramesRecepcion.PanelVentaProductos;
+//------------------------------------------------------------
 
 import desplazable.Desface;
 import java.awt.BorderLayout;
+
+//raul. import que se utiliza en el metodo ShowPanel()-----------
+import javax.swing.JPanel;
+//------------------------------------------------------------
 
 public class Recepcion extends javax.swing.JFrame {
     Desface desplace; 
@@ -13,19 +22,10 @@ public class Recepcion extends javax.swing.JFrame {
         initComponents();
         desplace = new Desface();        
         
-        //raul. En este caso determine para prueba que el panel de venta de procudtos fuese el primero en mostrarce, por eso el objeto que hice se llama panelvp.
-        //raul. oviamente esto lo tenemos que cambiar cuando diseñemos la ventana de inicio.
-        //raul. Lo siguiente son  las instrucciones para el nuevo panel de venta productos; Instancia, Tamaño del panel, pocicion.        
-        PanelVentaProductos panelvp = new PanelVentaProductos();
-        panelvp.setSize(384, 469);
-        panelvp.setLocation(0, 0);
-        //raul. El CentralFrame es el panel que esta vacio en la ventana de recepcion, a esta se le aplican las siguientes instrucciones
-        CentralFrame.removeAll();
-        CentralFrame.add(panelvp, BorderLayout.CENTER);
-        CentralFrame.revalidate();
-        CentralFrame.repaint();
-        // raul. Estas Instrucciones deben ser pegadas en cada evento de los botones, y una vez copiadas se cambia el nombre del objeto para el cual fue hecho. 
-        
+        //raul. Este es el primer panel que se mostrara una ves se abra la pantalla de recepcion---------------
+        PanelOpciones p1 = new PanelOpciones();
+        ShowPanel(p1);
+        //------------------------------------------------------------
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -112,6 +112,11 @@ public class Recepcion extends javax.swing.JFrame {
         btnlistaclientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnlistaclientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnlistaclientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btnlistaclientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlistaclientesActionPerformed(evt);
+            }
+        });
 
         btnmensualidad.setBackground(new java.awt.Color(57, 57, 57));
         btnmensualidad.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
@@ -211,6 +216,8 @@ public class Recepcion extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
+        CentralFrame.setRequestFocusEnabled(false);
+
         javax.swing.GroupLayout CentralFrameLayout = new javax.swing.GroupLayout(CentralFrame);
         CentralFrame.setLayout(CentralFrameLayout);
         CentralFrameLayout.setHorizontalGroup(
@@ -255,7 +262,10 @@ public class Recepcion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnmensualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmensualidadActionPerformed
-        // TODO add your handling code here:
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de mensualidades ---------------
+        PanelMensualidades p4 = new PanelMensualidades();
+        ShowPanel(p4);
+        //------------------------------------------------------------
     }//GEN-LAST:event_btnmensualidadActionPerformed
 
     private void btninicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninicioActionPerformed
@@ -263,11 +273,17 @@ public class Recepcion extends javax.swing.JFrame {
     }//GEN-LAST:event_btninicioActionPerformed
 
     private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
-        // TODO add your handling code here:
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de nueva inscripcion -----------------------
+        PanelNuevaInscripcion p2 = new PanelNuevaInscripcion();
+        ShowPanel(p2);
+        //------------------------------------------------------------
     }//GEN-LAST:event_btninscribirActionPerformed
 
     private void btndesplegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndesplegarActionPerformed
-       
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de Opciones -----------------------
+        PanelOpciones p1 = new PanelOpciones();
+        ShowPanel(p1);
+        //------------------------------------------------------------
     }//GEN-LAST:event_btndesplegarActionPerformed
 
     private void btndesplegarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btndesplegarMouseClicked
@@ -285,14 +301,10 @@ public class Recepcion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnvolverActionPerformed
 
     private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
-        //raul. Esto es lo que se ejecutara una vez oprimas el boton de venta de productos
-        PanelAgendarCita panelac = new PanelAgendarCita();
-        panelac.setSize(384, 469);
-        panelac.setLocation(0, 0);
-        CentralFrame.removeAll();
-        CentralFrame.add(panelac, BorderLayout.CENTER);
-        CentralFrame.revalidate();
-        CentralFrame.repaint();
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de agendar cita --------------
+        PanelAgendarCita p5 = new PanelAgendarCita();
+        ShowPanel(p5);
+        //------------------------------------------------------------
     }//GEN-LAST:event_btnagendarActionPerformed
 
     private void btndesplegarComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_btndesplegarComponentAdded
@@ -300,19 +312,31 @@ public class Recepcion extends javax.swing.JFrame {
     }//GEN-LAST:event_btndesplegarComponentAdded
 
     private void btnvenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvenderActionPerformed
-        //raul. Esto es lo que se ejecutara una vez oprimas el boton de venta de productos
-        PanelVentaProductos panelvp = new PanelVentaProductos();
-        panelvp.setSize(384, 469);
-        panelvp.setLocation(0, 0);
-        CentralFrame.removeAll();
-        CentralFrame.add(panelvp, BorderLayout.CENTER);
-        CentralFrame.revalidate();
-        CentralFrame.repaint();
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de venta de productos ---------------
+        PanelVentaProductos p6 = new PanelVentaProductos();
+        ShowPanel(p6);
+        //------------------------------------------------------------
     }//GEN-LAST:event_btnvenderActionPerformed
+
+    private void btnlistaclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistaclientesActionPerformed
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de lista clientes ---------------
+        PanelListaClientes p3 = new PanelListaClientes();
+        ShowPanel(p3);
+        //------------------------------------------------------------
+    }//GEN-LAST:event_btnlistaclientesActionPerformed
 
     public void run() {
         new Recepcion().setVisible(true);
             }
+    private void ShowPanel(JPanel p){
+        //raul. Metodo para mostrar paneles
+        p.setSize(384, 469);
+        p.setLocation(0, 0);
+        CentralFrame.removeAll();
+        CentralFrame.add(p, BorderLayout.CENTER);
+        CentralFrame.revalidate();
+        CentralFrame.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel CentralFrame;
