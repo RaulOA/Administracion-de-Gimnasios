@@ -28,23 +28,19 @@ public class PanelAgendarCita extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
-        jLabel1.setText("Este es el Panel de Agendar Cita");
+        jLabel1.setText("jLabel1");
+
+        setBackground(new java.awt.Color(102, 102, 102));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(211, Short.MAX_VALUE))
+            .addGap(0, 530, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(447, Short.MAX_VALUE))
+            .addGap(0, 475, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -28,6 +28,8 @@ public class PanelVentaProductos extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(102, 102, 102));
+
         jLabel1.setText("Este es el Panel de Venta de Productos.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -37,14 +39,14 @@ public class PanelVentaProductos extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(287, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(14, 14, 14)
                 .addComponent(jLabel1)
-                .addContainerGap(447, Short.MAX_VALUE))
+                .addContainerGap(442, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
