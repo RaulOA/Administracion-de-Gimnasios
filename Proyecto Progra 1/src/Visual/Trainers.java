@@ -20,6 +20,7 @@ public class Trainers extends javax.swing.JFrame {
         panelmenu2 = new javax.swing.JPanel();
         btnopciones = new javax.swing.JButton();
         btnregistrar = new javax.swing.JButton();
+        btnclientes = new javax.swing.JButton();
         btnpendientes = new javax.swing.JButton();
         btngenerar = new javax.swing.JButton();
         btnvolver2 = new javax.swing.JButton();
@@ -54,6 +55,14 @@ public class Trainers extends javax.swing.JFrame {
         btnregistrar.setText("Registrarse                     ");
         btnregistrar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnregistrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+
+        btnclientes.setBackground(new java.awt.Color(57, 57, 57));
+        btnclientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnclientes.setForeground(new java.awt.Color(255, 255, 255));
+        btnclientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/accessibility-outline.png"))); // NOI18N
+        btnclientes.setText("Clientes                           ");
+        btnclientes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnclientes.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
 
         btnpendientes.setBackground(new java.awt.Color(57, 57, 57));
         btnpendientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
@@ -96,6 +105,7 @@ public class Trainers extends javax.swing.JFrame {
                         .addGroup(panelmenu2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(btnopciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnregistrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnclientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnpendientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btngenerar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -110,12 +120,14 @@ public class Trainers extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnregistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnclientes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btngenerar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnpendientes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnvolver2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(204, Short.MAX_VALUE))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout panelprincipalLayout = new javax.swing.GroupLayout(panelprincipal);
@@ -191,6 +203,7 @@ public class Trainers extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnclientes;
     private javax.swing.JButton btngenerar;
     private javax.swing.JButton btnopciones;
     private javax.swing.JButton btnpendientes;
