@@ -329,13 +329,14 @@ public class Recepcion extends javax.swing.JFrame {
         new Recepcion().setVisible(true);
             }
     private void ShowPanel(JPanel p){
-        //raul. Metodo para mostrar paneles
+        //raul. Metodo para mostrar paneles ------------
         p.setSize(384, 469);
         p.setLocation(0, 0);
         CentralFrame.removeAll();
         CentralFrame.add(p, BorderLayout.CENTER);
         CentralFrame.revalidate();
         CentralFrame.repaint();
+        //------------------------------------------------------------
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
