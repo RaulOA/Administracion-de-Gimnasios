@@ -1,6 +1,7 @@
+
 package Datos;
-public class Clientes {
-    //raul. Variables de instancia, encapsuladas:
+
+public class Book {
     private String ID;
     private String nombre;
     private String apellido;
@@ -8,9 +9,19 @@ public class Clientes {
     private String peso;
     private String altura;
     private String telefono;
-    private String padecimientos;
+    private String padecimientos;  
     
-    //Getter y Setter 
+    public Book(){
+    ID = "";
+    nombre = "";
+    apellido = "";
+    genero = "";
+    peso = "";
+    altura = "";
+    telefono = "";
+    padecimientos = "";            
+    }    
+
     public String getID() {
         return ID;
     }
