@@ -309,7 +309,7 @@ public class Recepcion extends javax.swing.JFrame {
             }
     private void ShowPanel(JPanel p){
         //raul. Metodo para mostrar paneles ------------
-        p.setSize(530, 475);
+        p.setSize(400, 450);
         p.setLocation(0, 0);
         CentralFrame.removeAll();
         CentralFrame.add(p, BorderLayout.CENTER);
