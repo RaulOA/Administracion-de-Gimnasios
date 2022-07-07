@@ -1,15 +1,12 @@
 
 package FramesRecepcion;
-
+import Datos.Book;
 import Datos.ListBook;
 import javax.swing.JOptionPane;
-
-public class PanelNuevaInscripcion extends javax.swing.JPanel {   
-    
+public class PanelNuevaInscripcion extends javax.swing.JPanel {    
     public PanelNuevaInscripcion() {
         initComponents();
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -32,7 +29,6 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
         txtTelefono = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtPadecimientos = new javax.swing.JTextArea();
-        btnLimpiar = new javax.swing.JToggleButton();
         btnInscribir = new javax.swing.JToggleButton();
         btnVerificar = new javax.swing.JButton();
 
@@ -63,13 +59,6 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
 
         txtPadecimientos.setColumns(20);
         txtPadecimientos.setRows(5);
-
-        btnLimpiar.setText("Limpiar");
-        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLimpiarActionPerformed(evt);
-            }
-        });
 
         btnInscribir.setText("Inscribir");
         btnInscribir.addActionListener(new java.awt.event.ActionListener() {
@@ -129,8 +118,7 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
                         .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btnInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtPadecimientos, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))))
                 .addContainerGap())
@@ -175,53 +163,45 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInscribir)
-                    .addComponent(btnLimpiar)
                     .addComponent(btnVerificar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    //raul. evento del boton Inscribir, capturando los datos:
     private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
-        //raul. evento del boton Inscribir, capturando los datos:
-        String id = txtID.getText();
-        String nombre = txtNombre.getText();
-        String apellido = txtApellido.getText();
-        String genero = String.valueOf(cbGenero.getSelectedItem());
-        String peso = txtPeso.getText();
-        String altura = txtAltura.getText();
-        String telefono = txtTelefono.getText();
-        String padecimientos = txtPadecimientos.getText();
-
         //raul. verificar que todos los campos esten llenos
-        if (id.equals("")||id.equals("")||nombre.equals("")||apellido.equals("")||genero.equals("")||peso.equals("")||altura.equals("")||telefono.equals("")||padecimientos.equals("")) {
+        if (txtID.getText().equals("")||txtNombre.getText().equals("")||txtApellido.getText().equals("")||String.valueOf(cbGenero.getSelectedItem()).equals("")||txtPeso.getText().equals("")||txtAltura.getText().equals("")||txtTelefono.getText().equals("")||txtPadecimientos.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Asegúrese que todos los campos estén completos");
         } else {
-            //raul. una vez capturados los datos se crea un objeto el cual tiene la capacidad de enviar estos datos a la 
-            //      clase clientes por medio del metodo enviarDatos(), en donde se encuentra nuestro arreglo
-            ListBook x = new ListBook();
-            x.InsertarDatos(id, nombre, apellido, genero, peso, altura, telefono, padecimientos);
+            
+            Book persona = new Book();        
+            persona.setID(txtID.getText());
+            persona.setNombre(txtNombre.getText());
+            persona.setApellido(txtApellido.getText());
+            persona.setGenero(String.valueOf(cbGenero.getSelectedItem()));
+            persona.setPeso(txtPeso.getText());
+            persona.setAltura(txtAltura.getText());
+            persona.setTelefono(txtTelefono.getText());
+            persona.setPadecimientos(txtPadecimientos.getText());
+            ListBook.listbook.add(persona);
+            JOptionPane.showMessageDialog(null, "Cliente Ingresado");
+            txtID.setText(null);
+            txtNombre.setText(null);
+            txtApellido.setText(null);
+            txtPeso.setText(null);
+            txtAltura.setText(null);
+            txtTelefono.setText(null);
+            txtPadecimientos.setText(null);
         }
     }//GEN-LAST:event_btnInscribirActionPerformed
 
-    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        //raul. evento del boton limpiar, limpia todos los campos
-        txtID.setText(null);
-        txtNombre.setText(null);
-        txtApellido.setText(null);
-        txtPeso.setText(null);
-        txtAltura.setText(null);
-        txtTelefono.setText(null);
-        txtPadecimientos.setText(null);
-    }//GEN-LAST:event_btnLimpiarActionPerformed
-
     private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
         ListBook y = new ListBook();
-        y.getBooks();
+        y.verificar();
     }//GEN-LAST:event_btnVerificarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnInscribir;
-    private javax.swing.JToggleButton btnLimpiar;
     private javax.swing.JButton btnVerificar;
     private javax.swing.JComboBox<String> cbGenero;
     private javax.swing.JCheckBox jCheckBox1;
