@@ -199,7 +199,7 @@ public class Recepcion extends javax.swing.JFrame {
                 .addComponent(btnvender, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnvolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
 
         CentralFrame.setBackground(new java.awt.Color(102, 102, 102));
@@ -209,7 +209,7 @@ public class Recepcion extends javax.swing.JFrame {
         CentralFrame.setLayout(CentralFrameLayout);
         CentralFrameLayout.setHorizontalGroup(
             CentralFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 531, Short.MAX_VALUE)
+            .addGap(0, 554, Short.MAX_VALUE)
         );
         CentralFrameLayout.setVerticalGroup(
             CentralFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,7 +241,9 @@ public class Recepcion extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -301,6 +303,8 @@ public class Recepcion extends javax.swing.JFrame {
         //raul. Esto es lo que se ejecutara una vez oprimas el boton de lista clientes ---------------
         PanelListaClientes p3 = new PanelListaClientes();
         ShowPanel(p3);
+        p3.cargarDatos();
+                
         //------------------------------------------------------------
     }//GEN-LAST:event_btnlistaclientesActionPerformed
 
@@ -309,7 +313,7 @@ public class Recepcion extends javax.swing.JFrame {
             }
     private void ShowPanel(JPanel p){
         //raul. Metodo para mostrar paneles ------------
-        p.setSize(400, 450);
+        p.setSize(500, 600);
         p.setLocation(0, 0);
         CentralFrame.removeAll();
         CentralFrame.add(p, BorderLayout.CENTER);
