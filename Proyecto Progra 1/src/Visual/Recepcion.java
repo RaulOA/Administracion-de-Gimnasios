@@ -209,7 +209,7 @@ public class Recepcion extends javax.swing.JFrame {
         CentralFrame.setLayout(CentralFrameLayout);
         CentralFrameLayout.setHorizontalGroup(
             CentralFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 554, Short.MAX_VALUE)
+            .addGap(0, 805, Short.MAX_VALUE)
         );
         CentralFrameLayout.setVerticalGroup(
             CentralFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,14 +223,15 @@ public class Recepcion extends javax.swing.JFrame {
             .addGroup(panelPrincipalLayout.createSequentialGroup()
                 .addComponent(panelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CentralFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(CentralFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         panelPrincipalLayout.setVerticalGroup(
             panelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelPrincipalLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(panelPrincipalLayout.createSequentialGroup()
+                .addGap(6, 6, 6)
                 .addComponent(CentralFrame, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(panelMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -241,13 +242,32 @@ public class Recepcion extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
+        // Yir. Instrucción para volver a la ventana de loggin
+        Loggin volverloggin = new Loggin();
+        volverloggin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnvolverActionPerformed
+
+    private void btnvenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvenderActionPerformed
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de venta de productos ---------------
+        PanelVentaProductos p6 = new PanelVentaProductos();
+        ShowPanel(p6);
+        //------------------------------------------------------------
+    }//GEN-LAST:event_btnvenderActionPerformed
+
+    private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de agendar cita --------------
+        PanelAgendarCita p5 = new PanelAgendarCita();
+        ShowPanel(p5);
+        //------------------------------------------------------------
+    }//GEN-LAST:event_btnagendarActionPerformed
 
     private void btnmensualidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmensualidadActionPerformed
         //raul. Esto es lo que se ejecutara una vez oprimas el boton de mensualidades ---------------
@@ -255,6 +275,15 @@ public class Recepcion extends javax.swing.JFrame {
         ShowPanel(p4);
         //------------------------------------------------------------
     }//GEN-LAST:event_btnmensualidadActionPerformed
+
+    private void btnlistaclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistaclientesActionPerformed
+        //raul. Esto es lo que se ejecutara una vez oprimas el boton de lista clientes ---------------
+        PanelListaClientes p3 = new PanelListaClientes();
+        ShowPanel(p3);
+        p3.cargarDatos();
+
+        //------------------------------------------------------------
+    }//GEN-LAST:event_btnlistaclientesActionPerformed
 
     private void btninscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btninscribirActionPerformed
         //raul. Esto es lo que se ejecutara una vez oprimas el boton de nueva inscripcion -----------------------
@@ -274,46 +303,16 @@ public class Recepcion extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btndesplegarMouseClicked
 
-    private void btnvolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolverActionPerformed
-        // Yir. Instrucción para volver a la ventana de loggin
-        Loggin volverloggin = new Loggin();
-            volverloggin.setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_btnvolverActionPerformed
-
-    private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
-        //raul. Esto es lo que se ejecutara una vez oprimas el boton de agendar cita --------------
-        PanelAgendarCita p5 = new PanelAgendarCita();
-        ShowPanel(p5);
-        //------------------------------------------------------------
-    }//GEN-LAST:event_btnagendarActionPerformed
-
     private void btndesplegarComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_btndesplegarComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_btndesplegarComponentAdded
-
-    private void btnvenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvenderActionPerformed
-        //raul. Esto es lo que se ejecutara una vez oprimas el boton de venta de productos ---------------
-        PanelVentaProductos p6 = new PanelVentaProductos();
-        ShowPanel(p6);
-        //------------------------------------------------------------
-    }//GEN-LAST:event_btnvenderActionPerformed
-
-    private void btnlistaclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistaclientesActionPerformed
-        //raul. Esto es lo que se ejecutara una vez oprimas el boton de lista clientes ---------------
-        PanelListaClientes p3 = new PanelListaClientes();
-        ShowPanel(p3);
-        p3.cargarDatos();
-                
-        //------------------------------------------------------------
-    }//GEN-LAST:event_btnlistaclientesActionPerformed
 
     public void run() {
         new Recepcion().setVisible(true);
             }
     private void ShowPanel(JPanel p){
         //raul. Metodo para mostrar paneles ------------
-        p.setSize(500, 600);
+        p.setSize(800, 850);
         p.setLocation(0, 0);
         CentralFrame.removeAll();
         CentralFrame.add(p, BorderLayout.CENTER);
