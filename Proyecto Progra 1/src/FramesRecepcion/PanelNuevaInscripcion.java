@@ -189,7 +189,7 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
 
         //raul. verificar que todos los campos esten llenos
         if (id.equals("")||id.equals("")||nombre.equals("")||apellido.equals("")||genero.equals("")||peso.equals("")||altura.equals("")||telefono.equals("")||padecimientos.equals("")) {
-            JOptionPane.showMessageDialog(null, "Campos Vacios");
+            JOptionPane.showMessageDialog(null, "Asegúrese que todos los campos estén completos");
         } else {
             
             //raul. de otra manera se instancia el objeto con todos sus atributos
