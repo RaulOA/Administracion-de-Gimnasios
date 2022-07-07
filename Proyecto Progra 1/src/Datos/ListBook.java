@@ -39,10 +39,8 @@ public class ListBook {
             cadena+="ID: "+listbook.get(i).getID()+"\n";
             cadena+="Nombre: "+listbook.get(i).getNombre()+"\n";
             cadena+="Apellido: "+listbook.get(i).getApellido()+"\n";
-            cadena+=""+"\n";
+            cadena+=""+"\n";            
         }
-        JOptionPane.showMessageDialog(null, cadena);
-        
-    }
-    
+        JOptionPane.showMessageDialog(null, cadena);        
+    }    
 }
