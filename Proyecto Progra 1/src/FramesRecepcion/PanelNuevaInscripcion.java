@@ -1,15 +1,10 @@
 
 package FramesRecepcion;
 
-import Datos.Clientes;
-import java.util.ArrayList;
+import Datos.ListBook;
 import javax.swing.JOptionPane;
 
-public class PanelNuevaInscripcion extends javax.swing.JPanel {
-    
-    //raul. creando el array list de clientes:
-    ArrayList<Clientes> clientesPropios = new ArrayList<>();
-    
+public class PanelNuevaInscripcion extends javax.swing.JPanel {   
     
     public PanelNuevaInscripcion() {
         initComponents();
@@ -39,6 +34,7 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
         txtPadecimientos = new javax.swing.JTextArea();
         btnLimpiar = new javax.swing.JToggleButton();
         btnInscribir = new javax.swing.JToggleButton();
+        btnVerificar = new javax.swing.JButton();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -82,6 +78,13 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
             }
         });
 
+        btnVerificar.setText("Verificar");
+        btnVerificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerificarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -121,14 +124,15 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel8))
-                        .addGap(44, 44, 44)
+                            .addComponent(jLabel8)
+                            .addComponent(btnVerificar))
+                        .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnInscribir, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtPadecimientos, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))))
+                            .addComponent(txtPadecimientos, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -171,7 +175,8 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnInscribir)
-                    .addComponent(btnLimpiar))
+                    .addComponent(btnLimpiar)
+                    .addComponent(btnVerificar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -191,21 +196,10 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
         if (id.equals("")||id.equals("")||nombre.equals("")||apellido.equals("")||genero.equals("")||peso.equals("")||altura.equals("")||telefono.equals("")||padecimientos.equals("")) {
             JOptionPane.showMessageDialog(null, "Asegúrese que todos los campos estén completos");
         } else {
-            
-            //raul. de otra manera se instancia el objeto con todos sus atributos
-            Clientes p = new Clientes();
-            p.setID(id);
-            p.setNombre(nombre);
-            p.setApellido(apellido);
-            p.setGenero(genero);
-            p.setPeso(peso);
-            p.setAltura(altura);
-            p.setTelefono(telefono);
-            p.setPadecimientos(padecimientos);
-            //raul. y se inserta en el arraylist como un objeto
-            clientesPropios.add(p);
-            JOptionPane.showMessageDialog(null, "Usuario Ingresado Exitosamente");
-            
+            //raul. una vez capturados los datos se crea un objeto el cual tiene la capacidad de enviar estos datos a la 
+            //      clase clientes por medio del metodo enviarDatos(), en donde se encuentra nuestro arreglo
+            ListBook x = new ListBook();
+            x.InsertarDatos(id, nombre, apellido, genero, peso, altura, telefono, padecimientos);
         }
     }//GEN-LAST:event_btnInscribirActionPerformed
 
@@ -220,9 +214,15 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
         txtPadecimientos.setText(null);
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
+    private void btnVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerificarActionPerformed
+        ListBook y = new ListBook();
+        y.getBooks();
+    }//GEN-LAST:event_btnVerificarActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnInscribir;
     private javax.swing.JToggleButton btnLimpiar;
+    private javax.swing.JButton btnVerificar;
     private javax.swing.JComboBox<String> cbGenero;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
