@@ -112,6 +112,10 @@ public class Loggin extends javax.swing.JFrame {
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
             this.dispose();
+            
+            
+            
+            
         } else {
             JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
         }        

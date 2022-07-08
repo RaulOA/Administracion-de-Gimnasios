@@ -5,6 +5,7 @@ public class Book {
     private String ID;
     private String nombre;
     private String apellido;
+    private String edad;
     private String genero;
     private String peso;
     private String altura;
@@ -15,6 +16,7 @@ public class Book {
     ID = "";
     nombre = "";
     apellido = "";
+    edad = "";
     genero = "";
     peso = "";
     altura = "";
@@ -45,7 +47,13 @@ public class Book {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+    public String getEdad() {
+        return edad;
+    }
 
+    public void setEdad(String edad) {
+        this.edad = edad;
+    }
     public String getGenero() {
         return genero;
     }
@@ -86,4 +94,20 @@ public class Book {
         this.padecimientos = padecimientos;
     }
     
+    // Este metodo es para registrar los clientes predefinidos
+        public void clientesEstaticos(String id, String no, String ap, String ed, String ge, String pe, String al, String te, String pa){                   
+        Book persona = new Book();
+        persona.setID(id);         
+        persona.setNombre(no);         
+        persona.setApellido(ap);         
+        persona.setEdad(ed);         
+        persona.setGenero(ge);         
+        persona.setPeso(pe);         
+        persona.setAltura(al);         
+        persona.setTelefono(te);         
+        persona.setPadecimientos(pa);
+        ListBook.listbook.add(persona);
+    }
+        
+        
 }
