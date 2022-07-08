@@ -274,6 +274,7 @@ public class Recepcion extends javax.swing.JFrame {
         //raul. Esto es lo que se ejecutara una vez oprimas el boton de agendar cita --------------
         PanelAgendarCita p5 = new PanelAgendarCita();
         ShowPanel(p5);
+        p5.cargarCitas();
         //------------------------------------------------------------
     }//GEN-LAST:event_btnagendarActionPerformed
 
