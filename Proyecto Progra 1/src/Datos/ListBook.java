@@ -1,8 +1,11 @@
 package Datos;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+
 public class ListBook {
+    
     public static ArrayList<Book> listbook = new ArrayList<>();
+    
     // raul. Este metodo se ejecuta al presionar el boton verificar y
     // es para verificar todos los objetos ingresados en el array list:
     public void verificar(){

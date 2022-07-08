@@ -4,7 +4,6 @@ package FramesRecepcion;
 
 import Datos.Agendadas;
 import Datos.DatosCitas;
-import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -16,7 +15,7 @@ public class PanelAgendarCita extends javax.swing.JPanel {
         tablaCitas.setModel(modelo);
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
-        modelo.addColumn("Numero");
+        modelo.addColumn("Número");
         modelo.addColumn("Hora");
         modelo.addColumn("Fecha");
     }
@@ -56,17 +55,38 @@ public class PanelAgendarCita extends javax.swing.JPanel {
         jLabel1.setText("jLabel1");
 
         setBackground(new java.awt.Color(102, 102, 102));
+        setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
 
+        jLabel2.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Nombre:");
 
+        jLabel3.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Número:");
 
+        jLabel4.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Apellido:");
 
+        jLabel5.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Hora:");
 
+        txtnombre.setBackground(new java.awt.Color(187, 187, 187));
+        txtnombre.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+
+        txtapellido.setBackground(new java.awt.Color(187, 187, 187));
+        txtapellido.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+
+        txtnumero.setBackground(new java.awt.Color(187, 187, 187));
+        txtnumero.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+
+        cbhora.setBackground(new java.awt.Color(187, 187, 187));
+        cbhora.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         cbhora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:00 ", "9:00 ", "10:00 ", "11:00 ", "14:00", "15:00", "16:00", "17:00" }));
 
+        btnagendar.setFont(new java.awt.Font("Eras Medium ITC", 1, 16)); // NOI18N
         btnagendar.setText("Agendar cita");
         btnagendar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,8 +94,15 @@ public class PanelAgendarCita extends javax.swing.JPanel {
             }
         });
 
+        tablaCitas.setFont(new java.awt.Font("Eras Medium ITC", 0, 13)); // NOI18N
         tablaCitas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -86,7 +113,7 @@ public class PanelAgendarCita extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -94,6 +121,10 @@ public class PanelAgendarCita extends javax.swing.JPanel {
             }
         });
         jScrollPane1.setViewportView(tablaCitas);
+        if (tablaCitas.getColumnModel().getColumnCount() > 0) {
+            tablaCitas.getColumnModel().getColumn(3).setMinWidth(15);
+            tablaCitas.getColumnModel().getColumn(3).setPreferredWidth(20);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -103,32 +134,33 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(dtcalendar, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(25, 25, 25)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbhora, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnagendar))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cbhora, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtnumero, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(dtcalendar, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtnumero, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(57, 57, 57)
+                        .addComponent(btnagendar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,20 +169,24 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(dtcalendar, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(cbhora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnagendar))
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtnumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 67, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cbhora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txtnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel3)
+                                .addComponent(txtnumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(btnagendar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -166,6 +202,7 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                 
                 //instancio el objeto y se agregan los datos al Array.
                 DatosCitas ag = new DatosCitas();
+
                 //Yir.Captuto datos. La fecha debe ir capturada en el formato date porque se está capturando
                 //del jcalendar. En los get y set se establece que es de tipo date    
                 ag.setNombre(txtnombre.getText());
@@ -176,34 +213,17 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                 Agendadas.citasAgendadas.add(ag);
 
                 JOptionPane.showMessageDialog(null, "Cita Registrada.");
-           
-                
-            //Yir. Aquí le dejo el for para que vea que los datos si están entrando en el Array 
-           
-                for (int i = 0; i < Agendadas.citasAgendadas.size(); i++){
-                    System.out.println("\nCita: " + i);
-                    System.out.println("Nombre: " + Agendadas.citasAgendadas.get(i).getNombre());
-                    System.out.println("Apellido: " + Agendadas.citasAgendadas.get(i).getApellido());
-                    System.out.println("Numero: " + Agendadas.citasAgendadas.get(i).getNumero());
-                    System.out.println("Hora: " +Agendadas.citasAgendadas.get(i).getHora());
-                }
                 cargarCitas();
                 
+                //Yir. Borro los datos una vez registrada la cita
+                txtnombre.setText(null);
+                txtapellido.setText(null);
+                txtnumero.setText(null);
             }
-            
-        
+  
     }//GEN-LAST:event_btnagendarActionPerformed
-        /** Yir
-         * NOTITA: la fecha va a salir en un formato raro, no se preocupe 
-        por eso yo después lo arreglo :p
-        
-        * NOTITA2: la tabla no sale completa, pero no me dio tiempo de tocarle las dimensiones 
-        a la ventana jaja
-        * 
-        * NOTITA3: por ahora se ve horrible, yo después lo arreglo también
-        
-        */
-    
+       
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnagendar;

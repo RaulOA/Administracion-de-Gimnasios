@@ -12,10 +12,10 @@ public class PanelListaClientes extends javax.swing.JPanel
     {
         initComponents();   
         tablaClientes.setModel(modelo);
-        modelo.addColumn("Cedula");
+        modelo.addColumn("Cédula");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
-        modelo.addColumn("Telefono");
+        modelo.addColumn("Teléfono");
     }
     
     public void cargarDatos(){
@@ -41,8 +41,10 @@ public class PanelListaClientes extends javax.swing.JPanel
 
         setBackground(new java.awt.Color(102, 102, 102));
 
+        jLabel1.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         jLabel1.setText("Lista de Clientes");
 
+        btnEliminar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +52,7 @@ public class PanelListaClientes extends javax.swing.JPanel
             }
         });
 
+        tablaClientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 15)); // NOI18N
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -85,7 +88,7 @@ public class PanelListaClientes extends javax.swing.JPanel
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEliminar)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
