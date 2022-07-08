@@ -15,6 +15,13 @@ public class ListBook {
             cadena+="Apellido: "+listbook.get(i).getApellido()+"\n";
             cadena+=""+"\n";
         }
-        JOptionPane.showMessageDialog(null, cadena);        
+        JOptionPane.showMessageDialog(null, cadena);
+        
+        
     }    
+    
+    
+    
+    
+    
 }

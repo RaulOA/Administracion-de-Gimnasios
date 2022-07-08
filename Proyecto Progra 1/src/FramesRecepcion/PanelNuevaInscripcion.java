@@ -38,7 +38,7 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
 
         jLabel1.setText("Nueva Inscripcion");
 
-        jLabel2.setText("ID");
+        jLabel2.setText("Cedula");
 
         jLabel3.setText("Nombre");
 

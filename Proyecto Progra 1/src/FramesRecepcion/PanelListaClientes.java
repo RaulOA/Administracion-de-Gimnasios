@@ -12,14 +12,10 @@ public class PanelListaClientes extends javax.swing.JPanel
     {
         initComponents();   
         tablaClientes.setModel(modelo);
-        modelo.addColumn("ID");
+        modelo.addColumn("Cedula");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
-        modelo.addColumn("Genero");
-        modelo.addColumn("Peso");
-        modelo.addColumn("Altura");
         modelo.addColumn("Telefono");
-        modelo.addColumn("Padecimientos");
     }
     
     public void cargarDatos(){
@@ -29,11 +25,7 @@ public class PanelListaClientes extends javax.swing.JPanel
                 ListBook.listbook.get(i).getID(),
                 ListBook.listbook.get(i).getNombre(),
                 ListBook.listbook.get(i).getApellido(),
-                ListBook.listbook.get(i).getGenero(),
-                ListBook.listbook.get(i).getPeso(),
-                ListBook.listbook.get(i).getAltura(),
                 ListBook.listbook.get(i).getTelefono(),
-                ListBook.listbook.get(i).getPadecimientos(),
             
             });
         }    
@@ -98,7 +90,9 @@ public class PanelListaClientes extends javax.swing.JPanel
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+        int filaSeleccionada = tablaClientes.getSelectedRow();
+        ListBook.listbook.remove(filaSeleccionada);
+        cargarDatos();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
