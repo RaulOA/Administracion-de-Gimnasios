@@ -13,10 +13,10 @@ public class PanelListaClientes extends javax.swing.JPanel
     {
         initComponents();   
         tablaClientes.setModel(modelo);
-        modelo.addColumn("Cedula");
+        modelo.addColumn("Cédula");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
-        modelo.addColumn("Telefono");
+        modelo.addColumn("Teléfono");
     }
     
     public void cargarDatos(){
@@ -42,6 +42,9 @@ public class PanelListaClientes extends javax.swing.JPanel
 
         setBackground(new java.awt.Color(102, 102, 102));
 
+        btnEliminar.setBackground(new java.awt.Color(0, 0, 0));
+        btnEliminar.setFont(new java.awt.Font("Eras Medium ITC", 0, 18)); // NOI18N
+        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
         btnEliminar.setText("Eliminar");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,6 +52,7 @@ public class PanelListaClientes extends javax.swing.JPanel
             }
         });
 
+        tablaClientes.setFont(new java.awt.Font("Eras Medium ITC", 0, 17)); // NOI18N
         tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -60,6 +64,9 @@ public class PanelListaClientes extends javax.swing.JPanel
         tablaClientes.setShowGrid(true);
         jScrollPane1.setViewportView(tablaClientes);
 
+        btnModificar.setBackground(new java.awt.Color(0, 0, 0));
+        btnModificar.setFont(new java.awt.Font("Eras Medium ITC", 0, 18)); // NOI18N
+        btnModificar.setForeground(new java.awt.Color(255, 255, 255));
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,40 +79,51 @@ public class PanelListaClientes extends javax.swing.JPanel
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnModificar)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEliminar))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 9, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnEliminar)
+                        .addGap(62, 62, 62))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEliminar)
-                    .addComponent(btnModificar))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnModificar)
+                    .addComponent(btnEliminar))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int filaSeleccionada = tablaClientes.getSelectedRow();
-        ListBook.listbook.remove(filaSeleccionada);
-        cargarDatos();
+        
+        if (filaSeleccionada >= 0) {
+             ListBook.listbook.remove(filaSeleccionada);
+            cargarDatos();
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");
+        }
+        
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         int filaSeleccionada = tablaClientes.getSelectedRow();
-        
+
         if (filaSeleccionada >= 0) {
             ModificarCliente mod = new ModificarCliente();
             mod.setVisible(true);
+            mod.setLocationRelativeTo(null);
+            mod.setResizable(false);
 
             String id = ListBook.listbook.get(filaSeleccionada).getID();
             String nom = ListBook.listbook.get(filaSeleccionada).getNombre();
@@ -119,7 +137,7 @@ public class PanelListaClientes extends javax.swing.JPanel
 
             mod.modificar(id, nom, ape, eda, gen, pes, alt, tel, pad, filaSeleccionada);
         } else {
-            JOptionPane.showMessageDialog(null, "Debe de seleccionar un cliente");
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");
         }
         
     

@@ -33,7 +33,7 @@ public class Loggin extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logo.jpeg"))); // NOI18N
 
         btnRecepcion.setBackground(new java.awt.Color(57, 57, 57));
-        btnRecepcion.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnRecepcion.setFont(new java.awt.Font("Eras Medium ITC", 0, 17)); // NOI18N
         btnRecepcion.setForeground(new java.awt.Color(255, 255, 255));
         btnRecepcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/bar-chart-outline.png"))); // NOI18N
         btnRecepcion.setText(" Recepción");
@@ -48,7 +48,7 @@ public class Loggin extends javax.swing.JFrame {
         });
 
         btnTrainers.setBackground(new java.awt.Color(57, 57, 57));
-        btnTrainers.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnTrainers.setFont(new java.awt.Font("Eras Medium ITC", 0, 17)); // NOI18N
         btnTrainers.setForeground(new java.awt.Color(255, 255, 255));
         btnTrainers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/barbell-outline.png"))); // NOI18N
         btnTrainers.setText("Trainers");
@@ -107,7 +107,7 @@ public class Loggin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRecepcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecepcionActionPerformed
-        String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Recepcion");
+        String passResepcion = JOptionPane.showInputDialog("Digite la contraseña para ingresar a Recepción");
         if (passResepcion.equals("123")) {
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
@@ -122,7 +122,7 @@ public class Loggin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRecepcionActionPerformed
 
     private void btnTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainersActionPerformed
-        String passResepcion = JOptionPane.showInputDialog("Digite la Contraseña de Entrenador");
+        String passResepcion = JOptionPane.showInputDialog("Digite la contraseña para ingresar a Entrenadores");
         if (passResepcion.equals("456")) {
             Trainers ventana = new Trainers();
             ventana.setVisible(true);

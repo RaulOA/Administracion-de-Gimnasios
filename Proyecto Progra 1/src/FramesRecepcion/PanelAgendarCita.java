@@ -63,7 +63,7 @@ public class PanelAgendarCita extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Número:");
+        jLabel3.setText("Teléfono:");
 
         jLabel4.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
