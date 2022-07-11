@@ -1,6 +1,4 @@
-
 package Visual;
-
 
 public class Trainers extends javax.swing.JFrame {
 
@@ -11,7 +9,6 @@ public class Trainers extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -148,8 +145,8 @@ public class Trainers extends javax.swing.JFrame {
 
     private void btnvolver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolver2ActionPerformed
         Loggin volverloggin = new Loggin();
-            volverloggin.setVisible(true);
-            this.dispose();
+        volverloggin.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnvolver2ActionPerformed
 
     private void btnopcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnopcionesMouseClicked

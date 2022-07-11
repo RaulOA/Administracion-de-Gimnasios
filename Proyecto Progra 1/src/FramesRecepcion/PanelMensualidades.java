@@ -1,4 +1,3 @@
-
 package FramesRecepcion;
 
 public class PanelMensualidades extends javax.swing.JPanel {
@@ -6,7 +5,6 @@ public class PanelMensualidades extends javax.swing.JPanel {
     public PanelMensualidades() {
         initComponents();
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

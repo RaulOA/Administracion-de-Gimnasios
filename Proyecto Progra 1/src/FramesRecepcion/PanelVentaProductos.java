@@ -1,6 +1,4 @@
-
 package FramesRecepcion;
-
 
 import Datos.Venta;
 import java.util.ArrayList;
@@ -9,21 +7,21 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class PanelVentaProductos extends javax.swing.JPanel {
-    
+
     // juan. info de la tabla, luego trasladarla a DATOS.
-    String codigo [] ={"cod1","cod2","cod3","cod4","cod5","cod6","cod7","cod8","cod9"};//Juan:AÚN NO HACE NADA
-    String productos []={"BEBIDAS ENERGETICAS","BATIDO DE PROTEÍNA","BOTELLA DE AGUA","SCOOP PREENTRENO","GUANTES","SCOOP DE KREATINA","BANANOS","CONFITES","INSCRIPCION"};
-     double precios []={1000,1500,800,1000,5000,1000,100,25,15000};
-     double precio=0;
-     int cantidad=0;
+    String codigo[] = {"cod1", "cod2", "cod3", "cod4", "cod5", "cod6", "cod7", "cod8", "cod9"};//Juan:AÚN NO HACE NADA
+    String productos[] = {"BEBIDAS ENERGETICAS", "BATIDO DE PROTEÍNA", "BOTELLA DE AGUA", "SCOOP PREENTRENO", "GUANTES", "SCOOP DE KREATINA", "BANANOS", "CONFITES", "INSCRIPCION"};
+    double precios[] = {1000, 1500, 800, 1000, 5000, 1000, 100, 25, 15000};
+    double precio = 0;
+    int cantidad = 0;
     //--------------------------------------------------------------
-     
+
     DefaultTableModel modelo = new DefaultTableModel();
-    ArrayList<Venta> listaVentas=new ArrayList<Venta> () ;
+    ArrayList<Venta> listaVentas = new ArrayList<Venta>();
 
     public PanelVentaProductos() {
         initComponents();
-        
+
         DefaultComboBoxModel comboModel = new DefaultComboBoxModel(productos);
         cboProducto.setModel(comboModel);
         //modelo.addColumn("Cód");
@@ -31,11 +29,7 @@ public class PanelVentaProductos extends javax.swing.JPanel {
         modelo.addColumn("Precio Unidad");
         modelo.addColumn("Cantidad");
         modelo.addColumn("Importe");
-        
-        
-        actualizarTabla();
-        calcularPrecio();
-          
+
     }
 
     @SuppressWarnings("unchecked")
@@ -294,40 +288,40 @@ public class PanelVentaProductos extends javax.swing.JPanel {
     }//GEN-LAST:event_spnCantidadStateChanged
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        Venta venta=new Venta();
+        Venta venta = new Venta();
         venta.setId(cboProducto.getSelectedIndex());
         venta.setDescripcion(cboProducto.getSelectedItem().toString());
         venta.setPrecio(precio);
         venta.setCantidad(cantidad);
-        venta.setImporte(precio*cantidad);
+        venta.setImporte(precio * cantidad);
         if (!buscarVenta(venta)) { // Juan. solo si el producto no aparece en la lista de ventas lo agrega, en caso de que lo encuentre le suma la nueva cantidad
             listaVentas.add(venta);
         }
-        
+
         actualizarTabla();// juan. para rellenar tabla y asignar datos a los labels de total
         borrarVenta(); // Juan. Regresa las variables a cero
         System.out.println(listaVentas);
-        
-        
+
+
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
-        JOptionPane.showMessageDialog(null,"City Fitness \n Gracias por su compra");
-        
+        JOptionPane.showMessageDialog(null, "City Fitness \n Gracias por su compra");
+
         listaVentas.clear();
         actualizarTabla();
         calcularPrecio();
         System.out.println(listaVentas);
-        
-        
+
+
     }//GEN-LAST:event_btnPagarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        if (tblProductos.getSelectedRow()==-1){
+        if (tblProductos.getSelectedRow() == -1) {
             JOptionPane.showMessageDialog(null, "No ha seleccionado el articulo a eliminar");
         }
-        
-        int seleccion =tblProductos.getSelectedRow();
+
+        int seleccion = tblProductos.getSelectedRow();
         System.out.println(seleccion);
         modelo.removeRow(tblProductos.getSelectedRow());
         System.out.println(listaVentas);
@@ -335,70 +329,71 @@ public class PanelVentaProductos extends javax.swing.JPanel {
         System.out.println(listaVentas);
         actualizarTabla();
         calcularPrecio();
-               
-           
-                
+
+
     }//GEN-LAST:event_btnEliminarActionPerformed
-    
-    public boolean  buscarVenta(Venta nueva) { // Juan. Revia la lista de ventas, para sumar las cantidades en caso de que se repita el prodcuto
-        
-        for (Venta v: listaVentas) {
-            if (v.getId()==nueva.getId()){
-                int nuevaCantidad=v.getCantidad()+nueva.getCantidad();
+
+    public boolean buscarVenta(Venta nueva) { // Juan. Revia la lista de ventas, para sumar las cantidades en caso de que se repita el prodcuto
+
+        for (Venta v : listaVentas) {
+            if (v.getId() == nueva.getId()) {
+                int nuevaCantidad = v.getCantidad() + nueva.getCantidad();
                 v.setCantidad(nuevaCantidad);
-                v.setImporte(v.getPrecio()*nuevaCantidad);
+                v.setImporte(v.getPrecio() * nuevaCantidad);
                 return true;
             }
         }
         return false;
     }
-    public void borrarVenta(){ // Juan. Regresa las variables a valores iniciales
-        
-        precio=0;
-        cantidad=1;
+
+    public void borrarVenta() { // Juan. Regresa las variables a valores iniciales
+
+        precio = 0;
+        cantidad = 1;
         cboProducto.setSelectedIndex(0);
         spnCantidad.setValue(1);
         calcularPrecio();
-    
+
     }
-    public void calcularPrecio (){ //Juan. para obtener la selección del combo y el spinner y trasladarlos a los labels 
-        
-        precio = precios [cboProducto.getSelectedIndex()];
-        cantidad=Integer.parseInt(spnCantidad.getValue().toString());
+
+    public void calcularPrecio() { //Juan. para obtener la selección del combo y el spinner y trasladarlos a los labels 
+
+        precio = precios[cboProducto.getSelectedIndex()];
+        cantidad = Integer.parseInt(spnCantidad.getValue().toString());
         lblPrecio.setText(aMoneda(precio));
-        lblImporte.setText(aMoneda(precio*cantidad));
-   
+        lblImporte.setText(aMoneda(precio * cantidad));
+
     }
-    
-   public void actualizarTabla() {  // juan. para rellenar tabla y asignar datos a los labels de total
-       while (modelo.getRowCount()>0){ // juan. para remover registros anteriories
-           modelo.removeRow(0);
-       }
-       double subtotal=0;
-       for (Venta v : listaVentas) {  // Juan, recorrido para llenar nueva lista x
-           Object x []=new Object[4];
-           x[0]=v.getDescripcion();
-           x[1]=aMoneda(v.getPrecio()); //JUAN para pasarlo a formato de moneda
-           x[2]=v.getCantidad();
-           x[3]=aMoneda(v.getImporte());
-           subtotal+= v.getImporte();
-           modelo.addRow(x);
-           
-       }
-       double iva =subtotal * 0.13;
-       double total=subtotal+iva;
-       lblSubtotal.setText(aMoneda(subtotal));
-       lblIVA.setText(aMoneda(iva));
-       lblTotal.setText(aMoneda(total));
-       
-       tblProductos.setModel(modelo);
-       
-   
-   }
-    public String  aMoneda  (double precio){ // Juan. para transformar los labels a formatao de colones y redondear a un décimal
-        return "₡"+Math.round(precio*100.0)/100.0;
+
+    public void actualizarTabla() {  // juan. para rellenar tabla y asignar datos a los labels de total
+        while (modelo.getRowCount() > 0) { // juan. para remover registros anteriories
+            modelo.removeRow(0);
+        }
+        double subtotal = 0;
+        for (Venta v : listaVentas) {  // Juan, recorrido para llenar nueva lista x
+            Object x[] = new Object[4];
+            x[0] = v.getDescripcion();
+            x[1] = aMoneda(v.getPrecio()); //JUAN para pasarlo a formato de moneda
+            x[2] = v.getCantidad();
+            x[3] = aMoneda(v.getImporte());
+            subtotal += v.getImporte();
+            modelo.addRow(x);
+
+        }
+        double iva = subtotal * 0.13;
+        double total = subtotal + iva;
+        lblSubtotal.setText(aMoneda(subtotal));
+        lblIVA.setText(aMoneda(iva));
+        lblTotal.setText(aMoneda(total));
+
+        tblProductos.setModel(modelo);
+
     }
-    
+
+    public String aMoneda(double precio) { // Juan. para transformar los labels a formatao de colones y redondear a un décimal
+        return "₡" + Math.round(precio * 100.0) / 100.0;
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -427,5 +422,4 @@ public class PanelVentaProductos extends javax.swing.JPanel {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    
 }

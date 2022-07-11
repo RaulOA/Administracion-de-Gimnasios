@@ -1,4 +1,3 @@
-
 package FramesRecepcion;
 
 public class PanelOpciones extends javax.swing.JPanel {

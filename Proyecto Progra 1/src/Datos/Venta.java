@@ -1,8 +1,7 @@
-
 package Datos;
 
-
 public class Venta {
+
     int id;
     String descripcion;
     int cantidad;
@@ -51,9 +50,5 @@ public class Venta {
     public void setImporte(double importe) {
         this.importe = importe;
     }
-    
-    
-    
-            
-    
+
 }

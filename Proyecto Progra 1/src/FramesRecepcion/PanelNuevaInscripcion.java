@@ -1,12 +1,11 @@
-
 package FramesRecepcion;
-import Datos.Book;
-import Datos.ListBook;
-import javax.swing.JOptionPane;
-public class PanelNuevaInscripcion extends javax.swing.JPanel {    
+
+public class PanelNuevaInscripcion extends javax.swing.JPanel {
+
     public PanelNuevaInscripcion() {
         initComponents();
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

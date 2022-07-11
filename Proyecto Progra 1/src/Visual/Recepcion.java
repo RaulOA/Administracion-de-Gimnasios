@@ -1,4 +1,3 @@
-
 package Visual;
 
 //raul. imports que se utilizan en cada evento de boton, para llamar a los paneles de FrameRecepcion --------------
@@ -20,25 +19,26 @@ import javax.swing.JPanel;
 public class Recepcion extends javax.swing.JFrame {
 
     public Recepcion() {
-        initComponents();  
-        
+        initComponents();
+
         Book nuevos = new Book();
         nuevos.clientesEstaticos("2-0125-0148", "Eliet", "Cubillo", "21", "Femenino", "65.7", "1.74", "60215487", "Alergias");
         nuevos.clientesEstaticos("4-0951-0254", "Guillermo", "Delgado", "34", "Masculino", "70.5", "1.73", "74589623", "Ninguno");
         nuevos.clientesEstaticos("1-0654-0698", "Manuel", "Centeno", "29", "Masculino", "84.6", "1.80", "79652547", "Tendencia a los desguinces");
         nuevos.clientesEstaticos("6-0325-0785", "Luisa", "Cascante", "27", "Femenino", "81.1", "1.75", "63054687", "Diabetes");
         nuevos.clientesEstaticos("3-0865-0197", "Clara", "Mora", "45", "Femenino", "94.7", "1.79", "61658496", "Presion Alta");
-        
+
         //raul. Este es el primer panel que se mostrara una vez se abra la pantalla de recepcion---------------
         PanelOpciones p1 = new PanelOpciones();
         ShowPanel(p1);
-        
+
         //Yir. Instrucciones para que aparezca en el centro y no se pueda ajustar la pantalla. 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        
+
         //------------------------------------------------------------
     }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -316,8 +316,9 @@ public class Recepcion extends javax.swing.JFrame {
 
     public void run() {
         new Recepcion().setVisible(true);
-            }
-    private void ShowPanel(JPanel p){
+    }
+
+    private void ShowPanel(JPanel p) {
         //raul. Metodo para mostrar paneles ------------
         p.setSize(800, 850);
         p.setLocation(0, 0);
@@ -325,7 +326,7 @@ public class Recepcion extends javax.swing.JFrame {
         CentralFrame.add(p, BorderLayout.CENTER);
         CentralFrame.revalidate();
         CentralFrame.repaint();
-        //------------------------------------------------------------
+        //------------------------------------------------------------    
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -340,4 +341,4 @@ public class Recepcion extends javax.swing.JFrame {
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
-        }
+}

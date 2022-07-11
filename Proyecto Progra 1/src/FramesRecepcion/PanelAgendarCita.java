@@ -1,6 +1,4 @@
-
 package FramesRecepcion;
-
 
 import Datos.Agendadas;
 import Datos.DatosCitas;
@@ -8,6 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class PanelAgendarCita extends javax.swing.JPanel {
+
     DefaultTableModel modelo = new DefaultTableModel();
 
     public PanelAgendarCita() {
@@ -19,8 +18,8 @@ public class PanelAgendarCita extends javax.swing.JPanel {
         modelo.addColumn("Hora");
         modelo.addColumn("Fecha");
     }
-    
-    public void cargarCitas(){
+
+    public void cargarCitas() {
         modelo.setRowCount(0);
         for (int i = 0; i < Agendadas.citasAgendadas.size(); i++) {
             modelo.addRow(new Object[]{
@@ -28,11 +27,9 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                 Agendadas.citasAgendadas.get(i).getApellido(),
                 Agendadas.citasAgendadas.get(i).getNumero(),
                 Agendadas.citasAgendadas.get(i).getHora(),
-                Agendadas.citasAgendadas.get(i).getFecha(),
-            
-            });
-        }    
-    }  
+                Agendadas.citasAgendadas.get(i).getFecha(),});
+        }
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -191,38 +188,34 @@ public class PanelAgendarCita extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnagendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagendarActionPerformed
-        
 
-        
         //Yir. Verifico que todos los campos esten llenos.
-        
-            if (txtnombre.getText().equals("")||txtapellido.getText().equals("")||txtnumero.getText().equals("") ||cbhora.getSelectedItem().equals("")){
+        if (txtnombre.getText().equals("") || txtapellido.getText().equals("") || txtnumero.getText().equals("") || cbhora.getSelectedItem().equals("")) {
             JOptionPane.showMessageDialog(null, "Asegúrese que todos los campos estén completos");
-            }else {
-                
-                //instancio el objeto y se agregan los datos al Array.
-                DatosCitas ag = new DatosCitas();
+        } else {
 
-                //Yir.Captuto datos. La fecha debe ir capturada en el formato date porque se está capturando
-                //del jcalendar. En los get y set se establece que es de tipo date    
-                ag.setNombre(txtnombre.getText());
-                ag.setApellido(txtapellido.getText());
-                ag.setNumero ( txtnumero.getText());
-                ag.setHora((String)cbhora.getSelectedItem());
-                ag.setFecha(dtcalendar.getCalendar().getTime());
-                Agendadas.citasAgendadas.add(ag);
+            //instancio el objeto y se agregan los datos al Array.
+            DatosCitas ag = new DatosCitas();
 
-                JOptionPane.showMessageDialog(null, "Cita Registrada.");
-                cargarCitas();
-                
-                //Yir. Borro los datos una vez registrada la cita
-                txtnombre.setText(null);
-                txtapellido.setText(null);
-                txtnumero.setText(null);
-            }
-  
+            //Yir.Captuto datos. La fecha debe ir capturada en el formato date porque se está capturando
+            //del jcalendar. En los get y set se establece que es de tipo date    
+            ag.setNombre(txtnombre.getText());
+            ag.setApellido(txtapellido.getText());
+            ag.setNumero(txtnumero.getText());
+            ag.setHora((String) cbhora.getSelectedItem());
+            ag.setFecha(dtcalendar.getCalendar().getTime());
+            Agendadas.citasAgendadas.add(ag);
+
+            JOptionPane.showMessageDialog(null, "Cita Registrada.");
+            cargarCitas();
+
+            //Yir. Borro los datos una vez registrada la cita
+            txtnombre.setText(null);
+            txtapellido.setText(null);
+            txtnumero.setText(null);
+        }
+
     }//GEN-LAST:event_btnagendarActionPerformed
-       
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

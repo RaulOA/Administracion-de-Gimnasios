@@ -1,4 +1,3 @@
-
 package Visual;
 
 import javax.swing.JOptionPane;
@@ -7,13 +6,12 @@ public class Loggin extends javax.swing.JFrame {
 
     public Loggin() {
         initComponents();
-        
-        
+
         //Yir. Instrucciones para que aparezca en el centro y no se pueda ajustar la pantalla. 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
-        
+
     // ----------------------------------------------------------------------------------
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -112,13 +110,10 @@ public class Loggin extends javax.swing.JFrame {
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
             this.dispose();
-            
-            
-            
-            
+
         } else {
             JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
-        }        
+        }
     }//GEN-LAST:event_btnRecepcionActionPerformed
 
     private void btnTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainersActionPerformed
@@ -129,12 +124,9 @@ public class Loggin extends javax.swing.JFrame {
             this.dispose();
         } else {
             JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
-        }        
+        }
     }//GEN-LAST:event_btnTrainersActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -157,9 +149,7 @@ public class Loggin extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Loggin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Loggin().setVisible(true);

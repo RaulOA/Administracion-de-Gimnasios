@@ -1,36 +1,33 @@
-
 package FramesRecepcion;
 
 import Datos.ListBook;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class PanelListaClientes extends javax.swing.JPanel 
-{
-    DefaultTableModel modelo = new DefaultTableModel();    
-    
-    public PanelListaClientes() 
-    {
-        initComponents();   
+public class PanelListaClientes extends javax.swing.JPanel {
+
+    DefaultTableModel modelo = new DefaultTableModel();
+
+    public PanelListaClientes() {
+        initComponents();
         tablaClientes.setModel(modelo);
         modelo.addColumn("Cédula");
         modelo.addColumn("Nombre");
         modelo.addColumn("Apellido");
         modelo.addColumn("Teléfono");
     }
-    
-    public void cargarDatos(){
+
+    public void cargarDatos() {
         modelo.setRowCount(0);
         for (int i = 0; i < ListBook.listbook.size(); i++) {
             modelo.addRow(new Object[]{
                 ListBook.listbook.get(i).getID(),
                 ListBook.listbook.get(i).getNombre(),
                 ListBook.listbook.get(i).getApellido(),
-                ListBook.listbook.get(i).getTelefono(),
-            
-            });
-        }    
-    }    
+                ListBook.listbook.get(i).getTelefono(),});
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -105,15 +102,15 @@ public class PanelListaClientes extends javax.swing.JPanel
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         int filaSeleccionada = tablaClientes.getSelectedRow();
-        
+
         if (filaSeleccionada >= 0) {
-             ListBook.listbook.remove(filaSeleccionada);
+            ListBook.listbook.remove(filaSeleccionada);
             cargarDatos();
-            
+
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");
         }
-        
+
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
@@ -139,11 +136,8 @@ public class PanelListaClientes extends javax.swing.JPanel
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");
         }
-        
-    
-    
-    
-    
+
+
     }//GEN-LAST:event_btnModificarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
