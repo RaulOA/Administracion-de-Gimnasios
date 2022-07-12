@@ -1,5 +1,9 @@
 package FramesRecepcion;
 
+import Datos.Book;
+import Datos.ListBook;
+import javax.swing.JOptionPane;
+
 public class PanelNuevaInscripcion extends javax.swing.JPanel {
 
     public PanelNuevaInscripcion() {
@@ -42,6 +46,11 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
 
         txtID.setBackground(new java.awt.Color(187, 187, 187));
         txtID.setFont(new java.awt.Font("Eras Medium ITC", 0, 15)); // NOI18N
+        txtID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIDActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,6 +95,11 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
 
         txtTelefono.setBackground(new java.awt.Color(187, 187, 187));
         txtTelefono.setFont(new java.awt.Font("Eras Medium ITC", 0, 15)); // NOI18N
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTelefonoActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,6 +119,11 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
         btnInscribir.setFont(new java.awt.Font("Eras Medium ITC", 0, 18)); // NOI18N
         btnInscribir.setForeground(new java.awt.Color(255, 255, 255));
         btnInscribir.setText("Inscribir");
+        btnInscribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInscribirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -114,17 +133,16 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -223,6 +241,44 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
                 .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnInscribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInscribirActionPerformed
+
+        if (txtAltura.getText().equals("") || txtApellido.getText().equals("") || txtEdad1.getText().equals("") || txtID.getText().equals("") || txtNombre.getText().equals("") || txtPadecimientos.getText().equals("") || txtPadecimientos.getText().equals("") || txtPeso.getText().equals("") || txtTelefono.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Campos Incompletos");
+        } else {
+
+            Book persona = new Book();
+            persona.setAltura(txtAltura.getText());
+            persona.setApellido(txtApellido.getText());
+            persona.setEdad(txtEdad1.getText());
+            persona.setGenero(cbGenero.getSelectedItem().toString());
+            persona.setID(txtID.getText());
+            persona.setNombre(txtNombre.getText());
+            persona.setPadecimientos(txtPadecimientos.getText());
+            persona.setPeso(txtPeso.getText());
+            persona.setTelefono(txtTelefono.getText());
+            ListBook.listbook.add(persona);
+            JOptionPane.showMessageDialog(null, "Cliente Ingresado Exitosamente");
+            txtAltura.setText(null);
+            txtApellido.setText(null);
+            txtEdad1.setText(null);
+            txtID.setText(null);
+            txtNombre.setText(null);
+            txtPadecimientos.setText(null);
+            txtPeso.setText(null);
+            txtTelefono.setText(null);
+        }
+        
+    }//GEN-LAST:event_btnInscribirActionPerformed
+
+    private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIDActionPerformed
+
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtTelefonoActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnInscribir;
