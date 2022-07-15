@@ -36,33 +36,62 @@ public class ModificarCliente extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Modificar Datos del Cliente");
+        setTitle("Modificar Datos");
+        setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabel2.setText("Cedula");
+        jLabel2.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel2.setText("Cédula:");
 
-        jLabel3.setText("Nombre");
+        txtmCedula.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
 
-        jLabel4.setText("Apellido");
+        jLabel3.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel3.setText("Nombre:");
 
-        jLabel1.setText("Edad");
+        txtmNombre.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
 
-        jLabel5.setText("Genero");
+        jLabel4.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel4.setText("Apellido:");
 
+        txtmApellido.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel1.setText("Edad:");
+
+        txtmEdad.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+
+        jLabel5.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel5.setText("Género:");
+
+        cbmGenero.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
         cbmGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Femenino", "Masculino" }));
         cbmGenero.setToolTipText("");
 
-        jLabel6.setText("Peso");
+        jLabel6.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel6.setText("Peso:");
 
-        jLabel7.setText("Altura");
+        txtmPeso.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
 
-        jLabel8.setText("Telefono");
+        jLabel7.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel7.setText("Altura:");
 
-        jLabel9.setText("Padecimientos");
+        txtmAltura.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel8.setText("Teléfono:");
+
+        txtmTelefono.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+
+        jLabel9.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        jLabel9.setText("Padecimientos:");
 
         txtmPadecimientos.setColumns(20);
+        txtmPadecimientos.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
         txtmPadecimientos.setRows(5);
         jScrollPane2.setViewportView(txtmPadecimientos);
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Eras Medium ITC", 0, 15)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Aplicar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,34 +110,30 @@ public class ModificarCliente extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2))
                                 .addGap(18, 18, 18)
-                                .addComponent(txtmCedula))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtmCedula)
+                                    .addComponent(txtmNombre)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
                                 .addGap(18, 18, 18)
-                                .addComponent(txtmNombre))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtmApellido))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(cbmGenero, 0, 178, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtmPeso))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtmEdad)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtmPeso)
+                                    .addComponent(cbmGenero, 0, 173, Short.MAX_VALUE)
+                                    .addComponent(txtmEdad)
+                                    .addComponent(txtmApellido))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtmAltura))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtmAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addGap(18, 18, 18)
@@ -152,13 +177,13 @@ public class ModificarCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(txtmTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();

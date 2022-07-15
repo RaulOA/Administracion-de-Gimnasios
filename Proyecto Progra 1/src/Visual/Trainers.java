@@ -1,6 +1,7 @@
 package Visual;
 
 
+//Yir. Importo los paneles que luego se van a mostrar
 import FramesTrainers.PanelGenerarRutinas;
 import FramesTrainers.PanelOpciones2;
 import FramesTrainers.PanelPendientes;
@@ -14,6 +15,7 @@ public class Trainers extends javax.swing.JFrame {
     public Trainers() {
         initComponents();
         
+        //Yir. Panel que se va a mostrar de primero con la bienvenida.
         PanelOpciones2 p1 = new PanelOpciones2();
         ShowPanel(p1);
 
@@ -56,6 +58,11 @@ public class Trainers extends javax.swing.JFrame {
         btnopciones.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnopcionesMouseClicked(evt);
+            }
+        });
+        btnopciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnopcionesActionPerformed(evt);
             }
         });
 
@@ -202,19 +209,29 @@ public class Trainers extends javax.swing.JFrame {
     }//GEN-LAST:event_btnopcionesMouseClicked
 
     private void btnregistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnregistrarActionPerformed
+        //Yir. Llamo al panel de registrarse
         PanelRegistrarse p2 = new PanelRegistrarse();
         ShowPanel(p2);
     }//GEN-LAST:event_btnregistrarActionPerformed
 
     private void btnpendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpendientesActionPerformed
+        //Yir. Llamo al panel de mostrar pendientes
         PanelPendientes p3 = new PanelPendientes();
         ShowPanel(p3);
+        p3.mostrarPendientes();
+        
     }//GEN-LAST:event_btnpendientesActionPerformed
 
     private void btngenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerarActionPerformed
+        //Yir. Llamo al panel de generar rutinas.
         PanelGenerarRutinas p4 = new PanelGenerarRutinas();
         ShowPanel(p4);
     }//GEN-LAST:event_btngenerarActionPerformed
+
+    private void btnopcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnopcionesActionPerformed
+        PanelOpciones2 p1 = new PanelOpciones2();
+        ShowPanel(p1);
+    }//GEN-LAST:event_btnopcionesActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -225,7 +242,7 @@ public class Trainers extends javax.swing.JFrame {
     }
 
     private void ShowPanel(JPanel p) {
-        //Yir, para mostrar los paneles
+        //Yir. Instrucciones para mostrar los paneles
         p.setSize(800, 850);
         p.setLocation(0, 0);
         PanelMostrar.removeAll();
