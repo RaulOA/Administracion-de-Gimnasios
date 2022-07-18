@@ -1,6 +1,8 @@
 package FramesRecepcion;
 
+import Datos.BaseDeDatos;
 import Datos.ListBook;
+import java.io.IOException;
 
 public class ModificarCliente extends javax.swing.JFrame {
 
@@ -203,6 +205,14 @@ public class ModificarCliente extends javax.swing.JFrame {
         ListBook.listbook.get(filaSeleccionada).setPadecimientos(txtmPadecimientos.getText());
         PanelListaClientes j = new PanelListaClientes();
         j.cargarDatos();
+
+        BaseDeDatos t = new BaseDeDatos();
+        try {
+            t.refrescarBD();
+        } catch (IOException ex) {
+            System.out.println("Error al refrescar Base de datos");
+        }
+
         this.dispose();
 
 

@@ -1,15 +1,23 @@
 package Visual;
 
+import Datos.BaseDeDatos;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Loggin extends javax.swing.JFrame {
 
-    public Loggin() {
+    public Loggin() throws IOException {
         initComponents();
 
         //Yir. Instrucciones para que aparezca en el centro y no se pueda ajustar la pantalla. 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+
+        BaseDeDatos cargarBD = new BaseDeDatos();
+        cargarBD.cargarArchivo();
+
     }
 
     // ----------------------------------------------------------------------------------
@@ -107,6 +115,7 @@ public class Loggin extends javax.swing.JFrame {
     private void btnRecepcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecepcionActionPerformed
         String passResepcion = JOptionPane.showInputDialog("Digite la contraseña para ingresar a Recepción");
         if (passResepcion.equals("123")) {
+
             Recepcion ventana = new Recepcion();
             ventana.setVisible(true);
             this.dispose();
@@ -152,7 +161,11 @@ public class Loggin extends javax.swing.JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Loggin().setVisible(true);
+                try {
+                    new Loggin().setVisible(true);
+                } catch (IOException ex) {
+                    System.out.println("Error");;
+                }
             }
         });
     }

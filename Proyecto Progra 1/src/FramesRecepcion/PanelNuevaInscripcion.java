@@ -1,7 +1,10 @@
 package FramesRecepcion;
 
+import Datos.BaseDeDatos;
 import Datos.Book;
 import Datos.ListBook;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import javax.swing.JOptionPane;
 
 public class PanelNuevaInscripcion extends javax.swing.JPanel {
@@ -259,7 +262,27 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
             persona.setPeso(txtPeso.getText());
             persona.setTelefono(txtTelefono.getText());
             ListBook.listbook.add(persona);
+
+            BaseDeDatos i = new BaseDeDatos();
+
+            try {
+                i.ingresarNuevo(txtID.getText(),
+                        txtNombre.getText(),
+                        txtApellido.getText(),
+                        txtEdad1.getText(),
+                        cbGenero.getSelectedItem().toString(),
+                        txtPeso.getText(),
+                        txtAltura.getText(),
+                        txtTelefono.getText(),
+                        txtPadecimientos.getText());
+            } catch (UnsupportedEncodingException ex) {
+                System.out.println("Error al Ingresar Cliente al Archivo");
+            } catch (IOException ex) {
+                System.out.println("Error al Ingresar Cliente al Archivo");
+            }
+
             JOptionPane.showMessageDialog(null, "Cliente Ingresado Exitosamente");
+
             txtAltura.setText(null);
             txtApellido.setText(null);
             txtEdad1.setText(null);
@@ -269,7 +292,7 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
             txtPeso.setText(null);
             txtTelefono.setText(null);
         }
-        
+
     }//GEN-LAST:event_btnInscribirActionPerformed
 
     private void txtIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIDActionPerformed

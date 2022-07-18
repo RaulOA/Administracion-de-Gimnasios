@@ -1,6 +1,10 @@
 package FramesRecepcion;
 
+import Datos.BaseDeDatos;
 import Datos.ListBook;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -106,6 +110,12 @@ public class PanelListaClientes extends javax.swing.JPanel {
         if (filaSeleccionada >= 0) {
             ListBook.listbook.remove(filaSeleccionada);
             cargarDatos();
+            BaseDeDatos t = new BaseDeDatos();
+            try {
+                t.refrescarBD();
+            } catch (IOException ex) {
+                System.out.println("Error al refrescar Base de datos");
+            }
 
         } else {
             JOptionPane.showMessageDialog(null, "Debe seleccionar un cliente");

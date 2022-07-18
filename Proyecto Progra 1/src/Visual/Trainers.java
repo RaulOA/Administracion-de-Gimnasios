@@ -1,20 +1,21 @@
 package Visual;
 
-
 //Yir. Importo los paneles que luego se van a mostrar
 import FramesTrainers.PanelGenerarRutinas;
 import FramesTrainers.PanelOpciones2;
 import FramesTrainers.PanelPendientes;
 import FramesTrainers.PanelRegistrarse;
 import java.awt.BorderLayout;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
-
 
 public class Trainers extends javax.swing.JFrame {
 
     public Trainers() {
         initComponents();
-        
+
         //Yir. Panel que se va a mostrar de primero con la bienvenida.
         PanelOpciones2 p1 = new PanelOpciones2();
         ShowPanel(p1);
@@ -22,7 +23,7 @@ public class Trainers extends javax.swing.JFrame {
         //Yir. Instrucciones para que aparezca en el centro y no se pueda ajustar la pantalla. 
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        
+
     }
 
     @SuppressWarnings("unchecked")
@@ -199,9 +200,14 @@ public class Trainers extends javax.swing.JFrame {
 
     private void btnvolver2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvolver2ActionPerformed
         //Yir. Instrucción para volver al loggin
-        Loggin volverloggin = new Loggin();
-        volverloggin.setVisible(true);
-        this.dispose();
+        Loggin volverloggin;
+        try {
+            volverloggin = new Loggin();
+            volverloggin.setVisible(true);
+            this.dispose();
+        } catch (IOException ex) {
+            System.out.println("Error");;
+        }
     }//GEN-LAST:event_btnvolver2ActionPerformed
 
     private void btnopcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnopcionesMouseClicked
@@ -219,7 +225,7 @@ public class Trainers extends javax.swing.JFrame {
         PanelPendientes p3 = new PanelPendientes();
         ShowPanel(p3);
         p3.mostrarPendientes();
-        
+
     }//GEN-LAST:event_btnpendientesActionPerformed
 
     private void btngenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btngenerarActionPerformed
@@ -249,7 +255,7 @@ public class Trainers extends javax.swing.JFrame {
         PanelMostrar.add(p, BorderLayout.CENTER);
         PanelMostrar.revalidate();
         PanelMostrar.repaint();
-   
+
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelMostrar;
