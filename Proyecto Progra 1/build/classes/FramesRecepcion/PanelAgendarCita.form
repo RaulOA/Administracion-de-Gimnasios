@@ -68,6 +68,8 @@
                       </Group>
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="btnagendar" min="-2" pref="146" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="lblmostrar" min="-2" pref="83" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -103,7 +105,10 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Component id="btnagendar" alignment="0" min="-2" pref="58" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="btnagendar" alignment="3" min="-2" pref="58" max="-2" attributes="0"/>
+                      <Component id="lblmostrar" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="31" max="32767" attributes="0"/>
           </Group>
@@ -280,5 +285,7 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="lblmostrar">
+    </Component>
   </SubComponents>
 </Form>

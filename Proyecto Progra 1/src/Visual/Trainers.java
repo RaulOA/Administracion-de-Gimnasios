@@ -7,8 +7,6 @@ import FramesTrainers.PanelPendientes;
 import FramesTrainers.PanelRegistrarse;
 import java.awt.BorderLayout;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 public class Trainers extends javax.swing.JFrame {
@@ -70,8 +68,8 @@ public class Trainers extends javax.swing.JFrame {
         btnregistrar.setBackground(new java.awt.Color(57, 57, 57));
         btnregistrar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnregistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/edit-3.png"))); // NOI18N
-        btnregistrar.setText("Registrarse                     ");
+        btnregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/users.png"))); // NOI18N
+        btnregistrar.setText("Registros                         ");
         btnregistrar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnregistrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         btnregistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -218,6 +216,7 @@ public class Trainers extends javax.swing.JFrame {
         //Yir. Llamo al panel de registrarse
         PanelRegistrarse p2 = new PanelRegistrarse();
         ShowPanel(p2);
+        p2.cargarRegistro();
     }//GEN-LAST:event_btnregistrarActionPerformed
 
     private void btnpendientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpendientesActionPerformed

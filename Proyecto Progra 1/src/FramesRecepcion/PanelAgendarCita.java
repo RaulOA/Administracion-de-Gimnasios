@@ -2,6 +2,8 @@ package FramesRecepcion;
 
 import Datos.Agendadas;
 import Datos.DatosCitas;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -48,6 +50,7 @@ public class PanelAgendarCita extends javax.swing.JPanel {
         btnagendar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaCitas = new javax.swing.JTable();
+        lblmostrar = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -157,6 +160,8 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                                 .addComponent(txtnumero, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(57, 57, 57)
                         .addComponent(btnagendar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(51, 51, 51)
+                        .addComponent(lblmostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -182,7 +187,9 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                                 .addComponent(txtapellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel3)
                                 .addComponent(txtnumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(btnagendar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnagendar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblmostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -196,6 +203,10 @@ public class PanelAgendarCita extends javax.swing.JPanel {
 
             //instancio el objeto y se agregan los datos al Array.
             DatosCitas ag = new DatosCitas();
+            Date fechas = this.dtcalendar.getCalendar().getTime();
+            SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+            String fecha = formato.format(fechas);
+            this.lblmostrar.setText(fecha);
 
             //Yir.Captuto datos. La fecha debe ir capturada en el formato date porque se está capturando
             //del jcalendar. En los get y set se establece que es de tipo date    
@@ -228,6 +239,7 @@ public class PanelAgendarCita extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblmostrar;
     private javax.swing.JTable tablaCitas;
     private javax.swing.JTextField txtapellido;
     private javax.swing.JTextField txtnombre;
