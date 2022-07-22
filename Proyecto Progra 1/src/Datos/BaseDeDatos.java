@@ -15,6 +15,7 @@ import java.util.StringTokenizer;
 public class BaseDeDatos {
 
     File archivo = new File("Lista de Clientes.txt");
+    public static boolean pase = true;
 
     public void cargarArchivo() throws IOException {
         if (!archivo.exists()) {

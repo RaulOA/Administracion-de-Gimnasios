@@ -3,18 +3,3 @@
 1-0654-0698+Manuel+Centeno+29+Masculino+84.6+1.80+79652547+Tendencia a los desguinces
 6-0325-0785+Luisa+Cascante+27+Femenino+81.1+1.75+63054687+Diabetes
 3-0865-0197+Clara+Quesada Arrieta+45+Femenino+94.7+61658496+61658496+Presion Alta
-2-0125-0148+Eliet+Cubillo+21+Femenino+65.7+1.74+60215487+Alergias
-4-0951-0254+Guillermo+Delgado+34+Masculino+70.5+1.73+74589623+Ninguno
-1-0654-0698+Manuel+Centeno+29+Masculino+84.6+1.80+79652547+Tendencia a los desguinces
-6-0325-0785+Luisa+Cascante+27+Femenino+81.1+1.75+63054687+Diabetes
-3-0865-0197+Clara+Quesada Arrieta+45+Femenino+94.7+61658496+61658496+Presion Alta
-2-0125-0148+Eliet+Cubillo+21+Femenino+65.7+1.74+60215487+Alergias
-4-0951-0254+Guillermo+Delgado+34+Masculino+70.5+1.73+74589623+Ninguno
-1-0654-0698+Manuel+Centeno+29+Masculino+84.6+1.80+79652547+Tendencia a los desguinces
-6-0325-0785+Luisa+Cascante+27+Femenino+81.1+1.75+63054687+Diabetes
-3-0865-0197+Clara+Quesada Arrieta+45+Femenino+94.7+61658496+61658496+Presion Alta
-2-0125-0148+Eliet+Cubillo+21+Femenino+65.7+1.74+60215487+Alergias
-4-0951-0254+Guillermo+Delgado+34+Masculino+70.5+1.73+74589623+Ninguno
-1-0654-0698+Manuel+Centeno+29+Masculino+84.6+1.80+79652547+Tendencia a los desguinces
-6-0325-0785+Luisa+Cascante+27+Femenino+81.1+1.75+63054687+Diabetes
-3-0865-0197+Clara+Quesada Arrieta+45+Femenino+94.7+1.78+61658496+Presion Alta

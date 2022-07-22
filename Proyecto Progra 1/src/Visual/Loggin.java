@@ -2,8 +2,6 @@ package Visual;
 
 import Datos.BaseDeDatos;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Loggin extends javax.swing.JFrame {
@@ -15,13 +13,12 @@ public class Loggin extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
 
-        BaseDeDatos cargarBD = new BaseDeDatos();
-        cargarBD.cargarArchivo();
-
+        if (BaseDeDatos.pase == true) {
+            BaseDeDatos cargarBD = new BaseDeDatos();
+            cargarBD.cargarArchivo();
+            BaseDeDatos.pase = false;
+        }
     }
-
-    // ----------------------------------------------------------------------------------
-    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
