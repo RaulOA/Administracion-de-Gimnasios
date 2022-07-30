@@ -2,7 +2,14 @@ package FramesRecepcion;
 
 import Datos.BaseDeDatos;
 import Datos.ListBook;
+import Datos.ReporteClientes;
+import com.itextpdf.text.DocumentException;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -38,6 +45,7 @@ public class PanelListaClientes extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaClientes = new javax.swing.JTable();
         btnModificar = new javax.swing.JButton();
+        btnreporte = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(102, 102, 102));
 
@@ -73,14 +81,26 @@ public class PanelListaClientes extends javax.swing.JPanel {
             }
         });
 
+        btnreporte.setBackground(new java.awt.Color(0, 0, 0));
+        btnreporte.setFont(new java.awt.Font("Eras Medium ITC", 0, 18)); // NOI18N
+        btnreporte.setForeground(new java.awt.Color(255, 255, 255));
+        btnreporte.setText("Generar Reporte");
+        btnreporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreporteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(15, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnreporte)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnModificar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEliminar)
@@ -97,8 +117,9 @@ public class PanelListaClientes extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnModificar)
-                    .addComponent(btnEliminar))
-                .addContainerGap(11, Short.MAX_VALUE))
+                    .addComponent(btnEliminar)
+                    .addComponent(btnreporte))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -148,9 +169,35 @@ public class PanelListaClientes extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnModificarActionPerformed
 
+    private void btnreporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreporteActionPerformed
+        Date fecha = new Date();
+        SimpleDateFormat formato = new SimpleDateFormat("MM/dd/yyyy");
+        String fechag = formato.format(fecha);
+        
+        
+        String[][] clientes = new String [tablaClientes.getRowCount()][4];
+        
+        for (int i = 0; i < tablaClientes.getRowCount(); i++) {
+            for (int j = 0; j < 4; j++) {
+                clientes[i][j] = String.valueOf(tablaClientes.getValueAt(i, j));
+            }
+        }
+        
+        ReporteClientes reporte = new ReporteClientes("Reporte Lista Clientes", fechag.toString(), clientes);
+        try {
+            reporte.generarReporte();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(PanelListaClientes.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(PanelListaClientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_btnreporteActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnModificar;
+    private javax.swing.JButton btnreporte;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablaClientes;
     // End of variables declaration//GEN-END:variables
