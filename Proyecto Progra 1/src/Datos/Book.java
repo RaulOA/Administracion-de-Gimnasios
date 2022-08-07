@@ -11,6 +11,7 @@ public class Book {
     private String altura;
     private String telefono;
     private String padecimientos;
+    private String dia;
 
     public Book() {
         ID = "";
@@ -96,8 +97,16 @@ public class Book {
         this.padecimientos = padecimientos;
     }
 
-    // Este metodo es para registrar los clientes predefinidos
-    public void clientesEstaticos(String id, String no, String ap, String ed, String ge, String pe, String al, String te, String pa) {
+    public String getDia() {
+        return dia;
+    }
+
+    public void setDia(String dia) {
+        this.dia = dia;
+    }
+
+//     Este metodo carga los clientes de la base de datos al arraylist de clientes
+    public void clientesEstaticos(String id, String no, String ap, String ed, String ge, String pe, String al, String te, String pa, String dia) {
         Book persona = new Book();
         persona.setID(id);
         persona.setNombre(no);
@@ -108,6 +117,7 @@ public class Book {
         persona.setAltura(al);
         persona.setTelefono(te);
         persona.setPadecimientos(pa);
+        persona.setDia(dia);
         ListBook.listbook.add(persona);
     }
 

@@ -5,6 +5,7 @@ import Datos.Book;
 import Datos.ListBook;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 
 public class PanelNuevaInscripcion extends javax.swing.JPanel {
@@ -250,7 +251,6 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
         if (txtAltura.getText().equals("") || txtApellido.getText().equals("") || txtEdad1.getText().equals("") || txtID.getText().equals("") || txtNombre.getText().equals("") || txtPadecimientos.getText().equals("") || txtPadecimientos.getText().equals("") || txtPeso.getText().equals("") || txtTelefono.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Campos Incompletos");
         } else {
-
             Book persona = new Book();
             persona.setAltura(txtAltura.getText());
             persona.setApellido(txtApellido.getText());
@@ -261,10 +261,10 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
             persona.setPadecimientos(txtPadecimientos.getText());
             persona.setPeso(txtPeso.getText());
             persona.setTelefono(txtTelefono.getText());
+            Calendar calendario = Calendar.getInstance();
+            persona.setDia(String.valueOf(calendario.get(Calendar.DAY_OF_YEAR)));
             ListBook.listbook.add(persona);
-
             BaseDeDatos i = new BaseDeDatos();
-
             try {
                 i.ingresarNuevo(txtID.getText(),
                         txtNombre.getText(),
@@ -274,7 +274,8 @@ public class PanelNuevaInscripcion extends javax.swing.JPanel {
                         txtPeso.getText(),
                         txtAltura.getText(),
                         txtTelefono.getText(),
-                        txtPadecimientos.getText());
+                        txtPadecimientos.getText(),
+                        String.valueOf(calendario.get(Calendar.DAY_OF_YEAR)));
             } catch (UnsupportedEncodingException ex) {
                 System.out.println("Error al Ingresar Cliente al Archivo");
             } catch (IOException ex) {

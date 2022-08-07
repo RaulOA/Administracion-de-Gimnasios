@@ -278,6 +278,7 @@ public class Recepcion extends javax.swing.JFrame {
         //raul. Esto es lo que se ejecutara una vez oprimas el boton de mensualidades ---------------
         PanelMensualidades p4 = new PanelMensualidades();
         ShowPanel(p4);
+        p4.cargarDatos();
         //------------------------------------------------------------
     }//GEN-LAST:event_btnmensualidadActionPerformed
 

@@ -36,8 +36,9 @@ public class BaseDeDatos {
                 String altura = st.nextToken();
                 String telefono = st.nextToken();
                 String padecimientos = st.nextToken();
+                String dia = st.nextToken();
                 Book nuevos = new Book();
-                nuevos.clientesEstaticos(ID, nombre, apellido, edad, genero, peso, altura, telefono, padecimientos);
+                nuevos.clientesEstaticos(ID, nombre, apellido, edad, genero, peso, altura, telefono, padecimientos, dia);
             }
 
         }
@@ -52,7 +53,8 @@ public class BaseDeDatos {
             String peso,
             String altura,
             String telefono,
-            String padecimientos) throws FileNotFoundException, UnsupportedEncodingException, IOException {
+            String padecimientos,
+            String dia) throws FileNotFoundException, UnsupportedEncodingException, IOException {
 
         BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(archivo, true), "utf-8"));
         wr.write(ID + "+" + nombre
@@ -62,7 +64,8 @@ public class BaseDeDatos {
                 + "+" + peso
                 + "+" + altura
                 + "+" + telefono
-                + "+" + padecimientos + "\n");
+                + "+" + padecimientos
+                + "+" + dia + "\n");
         wr.close();
     }
 
@@ -83,7 +86,8 @@ public class BaseDeDatos {
                     + ListBook.listbook.get(i).getPeso() + "+"
                     + ListBook.listbook.get(i).getAltura() + "+"
                     + ListBook.listbook.get(i).getTelefono() + "+"
-                    + ListBook.listbook.get(i).getPadecimientos() + "\n");
+                    + ListBook.listbook.get(i).getPadecimientos() + "+"
+                    + ListBook.listbook.get(i).getDia() + "\n");
             wr.close();
 
         }
