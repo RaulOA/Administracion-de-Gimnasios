@@ -77,6 +77,11 @@ public class ModificarCliente extends javax.swing.JFrame {
         jLabel7.setText("Altura:");
 
         txtmAltura.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        txtmAltura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtmAlturaActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
         jLabel8.setText("Teléfono:");
@@ -201,7 +206,7 @@ public class ModificarCliente extends javax.swing.JFrame {
         ListBook.listbook.get(filaSeleccionada).setGenero(cbmGenero.getSelectedItem().toString());
         ListBook.listbook.get(filaSeleccionada).setPeso(txtmPeso.getText());
         ListBook.listbook.get(filaSeleccionada).setAltura(txtmAltura.getText());
-        ListBook.listbook.get(filaSeleccionada).setAltura(txtmTelefono.getText());
+        ListBook.listbook.get(filaSeleccionada).setTelefono(txtmTelefono.getText());
         ListBook.listbook.get(filaSeleccionada).setPadecimientos(txtmPadecimientos.getText());
         PanelListaClientes j = new PanelListaClientes();
         j.cargarDatos();
@@ -217,6 +222,10 @@ public class ModificarCliente extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtmAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtmAlturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtmAlturaActionPerformed
 
     // este metodo hace que los datos del cliente seleccionado se repliquen en sus respectivas cajas de texto
     public void modificar(String id, String no, String ap, String ed, String ge, String pe, String al, String te, String pa, int fila) {
