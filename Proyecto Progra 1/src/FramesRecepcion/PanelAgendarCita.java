@@ -199,16 +199,17 @@ public class PanelAgendarCita extends javax.swing.JPanel {
         //Yir. Verifico que todos los campos esten llenos.
         if (txtnombre.getText().equals("") || txtapellido.getText().equals("") || txtnumero.getText().equals("") || cbhora.getSelectedItem().equals("")) {
             JOptionPane.showMessageDialog(null, "Asegúrese que todos los campos estén completos");
+        
         } else {
 
             //instancio el objeto y se agregan los datos al Array.
             DatosCitas ag = new DatosCitas();
             Date fechas = this.dtcalendar.getCalendar().getTime();
-            SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+            SimpleDateFormat formato = new SimpleDateFormat("dd-MM");
             String fecha = formato.format(fechas);
             this.lblmostrar.setText(fecha);
-
-            //Yir.Captuto datos. La fecha debe ir capturada en el formato date porque se está capturando
+            
+              //Yir.Captuto datos. La fecha debe ir capturada en el formato date porque se está capturando
             //del jcalendar. En los get y set se establece que es de tipo date    
             ag.setNombre(txtnombre.getText());
             ag.setApellido(txtapellido.getText());
@@ -216,9 +217,7 @@ public class PanelAgendarCita extends javax.swing.JPanel {
             ag.setHora((String) cbhora.getSelectedItem());
             ag.setFecha(dtcalendar.getCalendar().getTime());
             Agendadas.citasAgendadas.add(ag);
-
-            JOptionPane.showMessageDialog(null, "Cita Registrada.");
-            cargarCitas();
+            verificar();
 
             //Yir. Borro los datos una vez registrada la cita
             txtnombre.setText(null);
@@ -226,8 +225,32 @@ public class PanelAgendarCita extends javax.swing.JPanel {
             txtnumero.setText(null);
         }
 
+     
+
     }//GEN-LAST:event_btnagendarActionPerformed
 
+    public void verificar(){
+        boolean verificar = false;
+        String hora = (String)cbhora.getSelectedItem();
+        Date fechaS = dtcalendar.getCalendar().getTime();
+        
+        for (int i = 0; i < Agendadas.citasAgendadas.size(); i++) {
+            if ((Agendadas.citasAgendadas.get(i).equals(hora)) && (Agendadas.citasAgendadas.get(i).equals(fechaS))){
+                verificar = true;
+            }else{
+                verificar = false;
+            }
+        }
+        
+        System.out.println(verificar);
+        if (verificar == false){
+            JOptionPane.showMessageDialog(null, "Cita Registrada.");
+            cargarCitas();
+        }else{
+            JOptionPane.showMessageDialog(null, "La cita disponible este día en este horario se encuentra agendada.");
+        }
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnagendar;
