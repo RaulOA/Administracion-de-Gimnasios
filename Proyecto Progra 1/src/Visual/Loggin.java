@@ -2,7 +2,10 @@ package Visual;
 
 import Datos.BaseDeDatos;
 import java.io.IOException;
+import java.net.PasswordAuthentication;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.text.PasswordView;
 
 public class Loggin extends javax.swing.JFrame {
 
@@ -110,27 +113,44 @@ public class Loggin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRecepcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecepcionActionPerformed
-        String passResepcion = JOptionPane.showInputDialog("Digite la contraseña para ingresar a Recepción");
-        if (passResepcion.equals("123")) {
 
-            Recepcion ventana = new Recepcion();
-            ventana.setVisible(true);
-            this.dispose();
+        JPasswordField contrasena = new JPasswordField(); //Juan. Para enmascar la contraseña digitada
+        String pass;
 
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
+        if (JOptionPane.showConfirmDialog(null, contrasena, "Ingrese contraseña de Recepción", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) {
+            pass = new String(contrasena.getPassword());
+            if (pass.equals("123")) {
+
+                Recepcion ventana = new Recepcion();
+                ventana.setVisible(true);
+                this.dispose();
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
+            }
+
         }
+
+
     }//GEN-LAST:event_btnRecepcionActionPerformed
 
     private void btnTrainersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrainersActionPerformed
-        String passResepcion = JOptionPane.showInputDialog("Digite la contraseña para ingresar a Entrenadores");
-        if (passResepcion.equals("456")) {
-            Trainers ventana = new Trainers();
-            ventana.setVisible(true);
-            this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
+
+        String passEn;
+        JPasswordField passEntrenador = new JPasswordField();
+        
+        if (JOptionPane.showConfirmDialog(null, passEntrenador, "Ingrese contraseña de Entrenador", JOptionPane.OK_CANCEL_OPTION) == JOptionPane.OK_OPTION) {
+            passEn = new String(passEntrenador.getPassword());
+            if (passEn.equals("456")) {
+                Trainers ventana = new Trainers();
+                ventana.setVisible(true);
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Contraseña Incorrecta");
+            }
         }
+
+
     }//GEN-LAST:event_btnTrainersActionPerformed
 
     public static void main(String args[]) {
@@ -173,4 +193,8 @@ public class Loggin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
+
+    private int PasswordView(String passResepcion) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
