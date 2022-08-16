@@ -13,7 +13,7 @@ public class PanelMensualidades extends javax.swing.JPanel {
         TablaClientesFecha.setModel(modelo);
         modelo.addColumn("Cédula");
         modelo.addColumn("Apellido");
-        modelo.addColumn("Dias Restantes");
+        modelo.addColumn("Días Restantes");
         modelo.addColumn("Estado");
     }
     
@@ -29,7 +29,7 @@ public class PanelMensualidades extends javax.swing.JPanel {
             if (diasRestantes<=0) {
                 estado = "Atrasado";
             } else {
-                estado = "Al Dia";
+                estado = "Al Día";
             }
             modelo.addRow(new Object[]{
                 ListBook.listbook.get(i).getID(),
@@ -47,6 +47,7 @@ public class PanelMensualidades extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(102, 102, 102));
 
+        TablaClientesFecha.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
         TablaClientesFecha.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -63,8 +64,8 @@ public class PanelMensualidades extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(402, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 627, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(171, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
