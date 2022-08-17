@@ -311,8 +311,6 @@ public class PanelVentaProductos extends javax.swing.JPanel {
 
         actualizarTabla();// juan. para rellenar tabla y asignar datos a los labels de total
         borrarVenta(); // Juan. Regresa las variables a cero
-        System.out.println(listaVentas);
-
 
     }//GEN-LAST:event_btnAgregarActionPerformed
 
@@ -345,7 +343,6 @@ public class PanelVentaProductos extends javax.swing.JPanel {
 
             actualizarTabla();
             calcularPrecio();
-            System.out.println(listaVentas);
         }
 
     }//GEN-LAST:event_btnPagarActionPerformed
@@ -356,11 +353,8 @@ public class PanelVentaProductos extends javax.swing.JPanel {
         }
 
         int seleccion = tblProductos.getSelectedRow();
-        System.out.println(seleccion);
         modelo.removeRow(tblProductos.getSelectedRow());
-        System.out.println(listaVentas);
         listaVentas.remove(seleccion);
-        System.out.println(listaVentas);
         actualizarTabla();
         calcularPrecio();
 

@@ -1,10 +1,15 @@
 package FramesRecepcion;
 
 import Datos.Agendadas;
+import Datos.CorreoAgendarCita;
 import Datos.DatosCitas;
 import Datos.ListBook;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.mail.MessagingException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -39,6 +44,23 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                 Agendadas.citasAgendadas.get(i).getHora(),
                 Agendadas.citasAgendadas.get(i).getFecha(),});
         }
+    }
+    
+    public void enviarCorreo() throws UnsupportedEncodingException, MessagingException {
+        Date fechas = this.dtcalendar.getCalendar().getTime();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        String fecha = formato.format(fechas);
+        this.lblmostrar.setText("Cita registrada para " + fecha);
+            
+        String asunto = "Recordatorio Cita Agendada";
+        String cuerpo = cbClientes.getSelectedItem()+", la administración de City Fitness te recuerda que tienes una cita agendada para el día " + fecha + " "
+                + "¡Te esperamos!";
+        CorreoAgendarCita correo = new CorreoAgendarCita();
+        
+        correo.enviarMensaje(txtCorreo.getText(), asunto, cuerpo);
+        
+        JOptionPane.showMessageDialog(null, "Correo Enviado");
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -172,7 +194,7 @@ public class PanelAgendarCita extends javax.swing.JPanel {
                             .addComponent(jLabel4)
                             .addGap(18, 18, 18)
                             .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblmostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblmostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -244,6 +266,12 @@ public class PanelAgendarCita extends javax.swing.JPanel {
             Agendadas.citasAgendadas.add(ag);
             JOptionPane.showMessageDialog(null, "Cita Registrada.");
             cargarCitas();
+            
+            try {
+                enviarCorreo();
+            } catch (UnsupportedEncodingException | MessagingException ex) {
+                Logger.getLogger(PanelAgendarCita.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             //Yir. Borro los datos una vez registrada la cita
             txtnumero.setText(null);

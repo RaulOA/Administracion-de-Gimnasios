@@ -67,7 +67,7 @@
                           <Component id="txtCorreo" min="-2" pref="254" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="lblmostrar" min="-2" pref="83" max="-2" attributes="0"/>
+                  <Component id="lblmostrar" alignment="0" min="-2" pref="214" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="26" max="32767" attributes="0"/>
           </Group>

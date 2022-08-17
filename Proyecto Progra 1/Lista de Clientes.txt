@@ -6,3 +6,5 @@
 1-0354-0128+Roberto+Bolaños+32+Masculino+80+1.72+65987541+Ninguno+201
 2-0365-0125+Berta+Barquero+27+Femenino+71+1.68+78459685+Ninguno+218
 1-1223-3445+Juan Rafael +Astùa+34+Masculino+82+1.78+86119471+Ninguno+222
+1-1895-0380+Priscilla+Quirós+20+Femenino+73+1.66+83135976+Ninguno+228
+1-1646-0810+Raúl+Ortega+30+Femenino+85+1.78+78964378+Ninguno+228
