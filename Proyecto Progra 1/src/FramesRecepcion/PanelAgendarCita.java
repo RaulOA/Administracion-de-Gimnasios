@@ -53,8 +53,8 @@ public class PanelAgendarCita extends javax.swing.JPanel {
         this.lblmostrar.setText("Cita registrada para " + fecha);
             
         String asunto = "Recordatorio Cita Agendada";
-        String cuerpo = cbClientes.getSelectedItem()+", la administración de City Fitness te recuerda que tienes una cita agendada para el día " + fecha + " "
-                + "¡Te esperamos!";
+        String cuerpo = cbClientes.getSelectedItem()+", la administración de City Fitness te recuerda que tienes una cita agendada a las " + cbhora.getSelectedItem()+ " el día " + fecha + 
+                " ¡Te esperamos!";
         CorreoAgendarCita correo = new CorreoAgendarCita();
         
         correo.enviarMensaje(txtCorreo.getText(), asunto, cuerpo);
@@ -264,8 +264,9 @@ public class PanelAgendarCita extends javax.swing.JPanel {
             ag.setHora((String) cbhora.getSelectedItem());
             ag.setFecha(dtcalendar.getCalendar().getTime());
             Agendadas.citasAgendadas.add(ag);
-            JOptionPane.showMessageDialog(null, "Cita Registrada.");
             cargarCitas();
+            JOptionPane.showMessageDialog(null, "Cita Registrada.");
+            
             
             try {
                 enviarCorreo();
