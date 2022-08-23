@@ -68,7 +68,7 @@ public class Trainers extends javax.swing.JFrame {
         btnregistrar.setBackground(new java.awt.Color(57, 57, 57));
         btnregistrar.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btnregistrar.setForeground(new java.awt.Color(255, 255, 255));
-        btnregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/users.png"))); // NOI18N
+        btnregistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/archive.png"))); // NOI18N
         btnregistrar.setText("Registros                         ");
         btnregistrar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnregistrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);

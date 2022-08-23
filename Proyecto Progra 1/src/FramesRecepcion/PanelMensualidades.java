@@ -47,7 +47,7 @@ public class PanelMensualidades extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(102, 102, 102));
 
-        TablaClientesFecha.setFont(new java.awt.Font("Eras Medium ITC", 0, 14)); // NOI18N
+        TablaClientesFecha.setFont(new java.awt.Font("Eras Medium ITC", 0, 15)); // NOI18N
         TablaClientesFecha.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

@@ -2,6 +2,7 @@ package Visual;
 
 //raul. imports que se utilizan en cada evento de boton, para llamar a los paneles de FrameRecepcion --------------
 import FramesRecepcion.PanelAgendarCita;
+import FramesRecepcion.PanelEntrenadores;
 import FramesRecepcion.PanelListaClientes;
 import FramesRecepcion.PanelMensualidades;
 import FramesRecepcion.PanelNuevaInscripcion;
@@ -17,7 +18,7 @@ import javax.swing.JPanel;
 //------------------------------------------------------------
 
 public class Recepcion extends javax.swing.JFrame {
-
+    
     public Recepcion() {
         initComponents();
 
@@ -31,7 +32,7 @@ public class Recepcion extends javax.swing.JFrame {
 
         //------------------------------------------------------------
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -45,6 +46,7 @@ public class Recepcion extends javax.swing.JFrame {
         btnagendar = new javax.swing.JButton();
         btnvender = new javax.swing.JButton();
         btnvolver = new javax.swing.JButton();
+        btnlistaEntrenadores = new javax.swing.JButton();
         CentralFrame = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,7 +86,7 @@ public class Recepcion extends javax.swing.JFrame {
         btninscribir.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
         btninscribir.setForeground(new java.awt.Color(255, 255, 255));
         btninscribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/user-plus.png"))); // NOI18N
-        btninscribir.setText("Nueva Inscripción         ");
+        btninscribir.setText("Nueva Inscripción          ");
         btninscribir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btninscribir.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btninscribir.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -167,20 +169,35 @@ public class Recepcion extends javax.swing.JFrame {
             }
         });
 
+        btnlistaEntrenadores.setBackground(new java.awt.Color(57, 57, 57));
+        btnlistaEntrenadores.setFont(new java.awt.Font("Eras Medium ITC", 0, 16)); // NOI18N
+        btnlistaEntrenadores.setForeground(new java.awt.Color(255, 255, 255));
+        btnlistaEntrenadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/id-card-outline (1).png"))); // NOI18N
+        btnlistaEntrenadores.setText("Lista de Entrenadores   ");
+        btnlistaEntrenadores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnlistaEntrenadores.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnlistaEntrenadores.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        btnlistaEntrenadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlistaEntrenadoresActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
         panelMenu.setLayout(panelMenuLayout);
         panelMenuLayout.setHorizontalGroup(
             panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelMenuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnmensualidad, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(btnagendar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnvender, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btndesplegar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnvolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btninscribir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnlistaclientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnlistaEntrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnmensualidad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(btnagendar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnvender, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btndesplegar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnvolver, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btninscribir, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnlistaclientes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelMenuLayout.setVerticalGroup(
@@ -199,8 +216,10 @@ public class Recepcion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnvender, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnlistaEntrenadores, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnvolver, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         CentralFrame.setBackground(new java.awt.Color(102, 102, 102));
@@ -210,11 +229,11 @@ public class Recepcion extends javax.swing.JFrame {
         CentralFrame.setLayout(CentralFrameLayout);
         CentralFrameLayout.setHorizontalGroup(
             CentralFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 805, Short.MAX_VALUE)
+            .addGap(0, 764, Short.MAX_VALUE)
         );
         CentralFrameLayout.setVerticalGroup(
             CentralFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 494, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout panelPrincipalLayout = new javax.swing.GroupLayout(panelPrincipal);
@@ -313,10 +332,16 @@ public class Recepcion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btndesplegarComponentAdded
 
+    private void btnlistaEntrenadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlistaEntrenadoresActionPerformed
+        PanelEntrenadores p9 = new PanelEntrenadores();
+        ShowPanel(p9);
+        p9.cargarDatos();
+    }//GEN-LAST:event_btnlistaEntrenadoresActionPerformed
+    
     public void run() {
         new Recepcion().setVisible(true);
     }
-
+    
     private void ShowPanel(JPanel p) {
         //raul. Metodo para mostrar paneles ------------
         p.setSize(800, 850);
@@ -333,6 +358,7 @@ public class Recepcion extends javax.swing.JFrame {
     private javax.swing.JButton btnagendar;
     private javax.swing.JButton btndesplegar;
     private javax.swing.JButton btninscribir;
+    private javax.swing.JButton btnlistaEntrenadores;
     private javax.swing.JButton btnlistaclientes;
     private javax.swing.JButton btnmensualidad;
     private javax.swing.JButton btnvender;
